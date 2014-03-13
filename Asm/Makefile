@@ -5,7 +5,7 @@
 ## Login   <poulet_a@epitech.net>
 ## 
 ## Started on  Tue Mar 11 08:22:15 2014 poulet_a
-## Last update Thu Mar 13 19:24:44 2014 poulet_a
+## Last update Thu Mar 13 19:43:33 2014 poulet_a
 ##
 
 CC	=	cc
@@ -21,6 +21,9 @@ NAME	=	AsmX
 SRCS	=	../op/op.c \
 		main.c \
 		match.c
+		arguments.c \
+		files.c \
+		get_next_line.c
 
 OBJS	=	$(SRCS:.c=.o)
 

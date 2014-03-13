@@ -5,7 +5,7 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Thu Mar 13 15:55:28 2014 poulet_a
-** Last update Thu Mar 13 16:14:23 2014 poulet_a
+** Last update Thu Mar 13 19:44:46 2014 poulet_a
 */
 
 #include <sys/types.h>
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int	asm_open_asm_file(char *name)
+int	asm_open_s_file(char *name)
 {
   int	flags;
   int	fd;
@@ -27,7 +27,7 @@ int	asm_open_asm_file(char *name)
   return (fd);
 }
 
-int	asm_open_bin_file(char *name)
+int	asm_open_cor_file(char *name)
 {
   int	flags;
   int	rights;
