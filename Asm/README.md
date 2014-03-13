@@ -13,7 +13,7 @@ Fonctionnement
 	2. Gestion des arguments
 	   2.1. Supprimer les ' ' et '\t' inutile (hors des '"' et '\'', après/avant les ','
 	3. Parser les ' ' (et '\t')
-	4. Récupérer la ommande en *tab
+	4. Récupérer la commande en *tab
 	5. Calculer les arguments
 	6. Ecrire le resultat à la suite dans le fichier de sortie
 
