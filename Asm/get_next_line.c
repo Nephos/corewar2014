@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.net>
 **
 ** Started on  Wed Nov 20 21:02:19 2013 chapui_s
-** Last update Sun Feb  9 17:37:26 2014 chapui_s
+** Last update Thu Mar 13 20:42:09 2014 
 */
 
 #include <unistd.h>
@@ -103,9 +103,9 @@ char	*return_it(char **str, char **to_return)
   if ((new_str = (char*)malloc(sizeof(char) * (j + 1))) == NULL)
     return (NULL);
   (*to_return)[i] = 0;
-  i = 0 ;
-  while ((*str)[i] != '\n' && (*str)[i])
-    (*to_return)[i] = (*str)[i++];
+  i = -1;
+  while ((*str)[++i] != '\n' && (*str)[i])
+    (*to_return)[i] = (*str)[i];
   new_str[j] = 0;
   j = 0;
   while ((*str)[++i])
