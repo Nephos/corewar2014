@@ -5,7 +5,7 @@
 ## Login   <poulet_a@epitech.net>
 ## 
 ## Started on  Tue Mar 11 08:22:15 2014 poulet_a
-## Last update Thu Mar 13 16:48:43 2014 poulet_a
+## Last update Thu Mar 13 17:06:18 2014 poulet_a
 ##
 
 CC	=	cc
@@ -16,7 +16,7 @@ CFLAGS	+=	-W -Wall -pedantic
 
 LFLAGS	+=	-Iop
 
-NAME	=	corewar
+NAME	=	
 
 SRCS	=	
 
