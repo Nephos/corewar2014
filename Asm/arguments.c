@@ -5,19 +5,20 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Thu Mar 13 16:20:11 2014 poulet_a
-** Last update Thu Mar 13 16:29:03 2014 poulet_a
+** Last update Thu Mar 13 20:38:07 2014 poulet_a
 */
 
-#include "op.h"
+#include "../op/op.h"
+#include "my.h"
 
 int     arg_op_exists(char *op_name)
 {
   int	i;
 
   i = 0;
-  while (op_tab[i])
+  while (op_tab[i].mnemonique != 0)
     {
-      if (my_match(op_name, op_tab[i]->mnemonique))
+      if (my_match(op_name, op_tab[i].mnemonique))
 	return (i);
       i++;
     }
