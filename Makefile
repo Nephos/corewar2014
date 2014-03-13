@@ -5,7 +5,7 @@
 ## Login   <poulet_a@epitech.net>
 ## 
 ## Started on  Tue Mar 11 08:22:15 2014 poulet_a
-## Last update Thu Mar 13 16:22:37 2014 poulet_a
+## Last update Thu Mar 13 16:48:43 2014 poulet_a
 ##
 
 CC	=	cc
@@ -18,7 +18,7 @@ LFLAGS	+=	-Iop
 
 NAME	=	corewar
 
-SRCS	=	main.c
+SRCS	=	
 
 OBJS	=	$(SRCS:.c=.o)
 
