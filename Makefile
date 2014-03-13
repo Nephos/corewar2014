@@ -5,7 +5,7 @@
 ## Login   <poulet_a@epitech.net>
 ## 
 ## Started on  Tue Mar 11 08:22:15 2014 poulet_a
-## Last update Tue Mar 11 08:22:33 2014 poulet_a
+## Last update Thu Mar 13 16:22:37 2014 poulet_a
 ##
 
 CC	=	cc
@@ -13,6 +13,8 @@ CC	=	cc
 RM	=	rm -f
 
 CFLAGS	+=	-W -Wall -pedantic
+
+LFLAGS	+=	-Iop
 
 NAME	=	corewar
 
