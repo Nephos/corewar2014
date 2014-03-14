@@ -5,7 +5,7 @@
 ## Login   <poulet_a@epitech.net>
 ## 
 ## Started on  Tue Mar 11 08:22:15 2014 poulet_a
-## Last update Fri Mar 14 18:35:01 2014 poulet_a
+## Last update Fri Mar 14 21:24:38 2014 poulet_a
 ##
 
 CC	=	cc -g
@@ -31,8 +31,8 @@ SRCS	=	../op/op.c \
 		my/my_strsplit.c \
 		my/my_getnbr.c
 
-
 OBJS	=	$(SRCS:.c=.o)
+
 
 all:		$(NAME)
 
