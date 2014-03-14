@@ -5,11 +5,18 @@
 ** Login   <poulet_a@epitech.eu>
 ** 
 ** Started on  Wed Dec 18 09:05:09 2013 poulet_a
-** Last update Thu Mar 13 22:31:44 2014 poulet_a
+** Last update Fri Mar 14 18:31:31 2014 poulet_a
 */
 
 #include <stdlib.h>
 #include "my.h"
+
+static char	my_split_issep(char c)
+{
+  if (c == ' ' || c == '\t' || c == ',')
+    return (c);
+  return (0);
+}
 
 static unsigned int	my_strsplit_count(char *str)
 {
@@ -22,8 +29,8 @@ static unsigned int	my_strsplit_count(char *str)
   i = 0;
   while (str[i])
     {
-      if ((str[i] == ' ' || str[i] == '\t') && str[i + 1]
-	  && ((str[i] != ' ' && str[i] != '\t')))
+      if (my_split_issep(str[i])
+	  && str[i + 1] && !my_split_issep(str[i + 1]))
 	n++;
       i++;
     }
@@ -47,10 +54,10 @@ char		**my_strsplit(char *str)
   out[0] = str_cpy;
   while (str[i])
     {
-      if (str[i] == ' ' || str[i] == '\t')
+      if (my_split_issep(str[i]))
 	{
 	  str_cpy[i] = 0;
-	  if (str[i + 1] && str[i + 1] != ' ' && str[i] != '\t')
+	  if (str[i + 1] && !my_split_issep(str[i + 1]))
 	    out[n++] = str_cpy + i + 1;
 	}
       i++;
