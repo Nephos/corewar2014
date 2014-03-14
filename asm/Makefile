@@ -5,7 +5,7 @@
 ## Login   <poulet_a@epitech.net>
 ## 
 ## Started on  Tue Mar 11 08:22:15 2014 poulet_a
-## Last update Fri Mar 14 12:17:07 2014 poulet_a
+## Last update Fri Mar 14 13:18:35 2014 poulet_a
 ##
 
 CC	=	cc
@@ -19,9 +19,11 @@ NAME	=	asm
 
 SRCS	=	../op/op.c \
 		main.c \
-		arguments.c \
+		argument.c \
 		register.c \
-		files.c \
+		file.c \
+		special.c \
+		label.c \
 		my/get_next_line.c \
 		my/my_match.c \
 		my/my_strlen.c \

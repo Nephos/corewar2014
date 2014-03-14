@@ -5,7 +5,7 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Fri Mar 14 13:03:36 2014 poulet_a
-** Last update Fri Mar 14 13:05:33 2014 poulet_a
+** Last update Fri Mar 14 13:06:47 2014 poulet_a
 */
 
 #ifndef SPECIAL_H_
