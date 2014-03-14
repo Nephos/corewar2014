@@ -5,10 +5,10 @@
 ## Login   <poulet_a@epitech.net>
 ## 
 ## Started on  Tue Mar 11 08:22:15 2014 poulet_a
-## Last update Fri Mar 14 13:18:35 2014 poulet_a
+## Last update Fri Mar 14 18:35:01 2014 poulet_a
 ##
 
-CC	=	cc
+CC	=	cc -g
 
 RM	=	rm -f
 
