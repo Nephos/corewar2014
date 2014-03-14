@@ -5,7 +5,7 @@
 ## Login   <poulet_a@epitech.net>
 ## 
 ## Started on  Tue Mar 11 08:22:15 2014 poulet_a
-## Last update Fri Mar 14 11:31:09 2014 poulet_a
+## Last update Fri Mar 14 12:17:07 2014 poulet_a
 ##
 
 CC	=	cc
@@ -15,7 +15,7 @@ RM	=	rm -f
 CFLAGS	+=	-W -Wall -pedantic
 CFLAGS	+=	-I../op -I. -Imy
 
-NAME	=	AsmX
+NAME	=	asm
 
 SRCS	=	../op/op.c \
 		main.c \
