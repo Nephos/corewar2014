@@ -5,8 +5,10 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Tue Mar 11 08:22:38 2014 poulet_a
-** Last update Thu Mar 13 15:55:20 2014 poulet_a
+** Last update Fri Mar 14 12:07:57 2014 poulet_a
 */
+
+#include <stdlib.h>
 
 int     main(void)
 {

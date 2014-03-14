@@ -5,7 +5,7 @@
 ** Login   <poulet_a@epitech.eu>
 ** 
 ** Started on  Wed Dec 18 09:05:09 2013 poulet_a
-** Last update Thu Mar 13 20:36:34 2014 poulet_a
+** Last update Thu Mar 13 22:31:44 2014 poulet_a
 */
 
 #include <stdlib.h>
@@ -39,8 +39,8 @@ char		**my_strsplit(char *str)
 
   if (str == NULL || str[0] == 0)
     return (NULL);
-  if ((out = malloc(sizeof(char*) * (my_strsplit_count(str) + 1)) == NULL);
-  return (NULL);
+  if ((out = malloc(sizeof(char*) * (my_strsplit_count(str) + 1))) == NULL)
+    return (NULL);
   str_cpy = my_strdup(str);
   n = 1;
   i = 0;

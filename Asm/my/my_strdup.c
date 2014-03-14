@@ -5,10 +5,11 @@
 ** Login   <poulet_a@epitech.eu>
 ** 
 ** Started on  Mon Dec 16 15:30:14 2013 poulet_a
-** Last update Thu Mar 13 20:37:52 2014 poulet_a
+** Last update Fri Mar 14 11:28:21 2014 poulet_a
 */
 
 #include <stdlib.h>
+#include "my.h"
 
 char		*my_strdup(const char *src)
 {
