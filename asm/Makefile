@@ -5,7 +5,7 @@
 ## Login   <poulet_a@epitech.net>
 ## 
 ## Started on  Tue Mar 11 08:22:15 2014 poulet_a
-## Last update Fri Mar 14 21:24:38 2014 poulet_a
+## Last update Mon Mar 17 13:24:43 2014 poulet_a
 ##
 
 CC	=	cc -g
@@ -22,8 +22,8 @@ SRCS	=	../op/op.c \
 		argument.c \
 		register.c \
 		file.c \
-		special.c \
 		label.c \
+		get_cmd.c \
 		my/get_next_line.c \
 		my/my_match.c \
 		my/my_strlen.c \

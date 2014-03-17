@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.net>
 **
 ** Started on  Tue Nov 19 16:54:01 2013 chapui_s
-** Last update Sun Nov 24 23:05:30 2013 chapui_s
+** Last update Mon Mar 17 13:26:04 2014 poulet_a
 */
 
 #ifndef GET_NEXT_LINE_H_
@@ -19,7 +19,5 @@ typedef struct	s_fd
   int		fd;
   struct s_fd	*next;
 }		t_fd;
-
-char	*get_next_line(const int fd);
 
 #endif

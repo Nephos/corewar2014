@@ -5,7 +5,7 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Tue Mar 11 08:22:38 2014 poulet_a
-** Last update Fri Mar 14 21:35:35 2014 poulet_a
+** Last update Mon Mar 17 13:24:22 2014 poulet_a
 */
 
 #include <stdlib.h>
@@ -22,7 +22,7 @@ int     main(void)
   fd[1] = asm_open_cor_file("asm.cor");
   if (fd[0] < 0 || fd[1] < 0)
     return (1);
-  while ((cmd = get_cmd(fd[0])) != NULL)
+  while ((cmd = asm_get_next_cmd(fd[0])) != NULL)
     {
       /* README.md */
     }
