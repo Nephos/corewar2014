@@ -5,11 +5,11 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Fri Mar 14 18:41:59 2014 poulet_a
-** Last update Mon Mar 17 13:25:27 2014 poulet_a
+** Last update Mon Mar 17 14:03:13 2014 poulet_a
 */
 
 #include <stdlib.h>
-#include "my.h"
+#include "my/my.h"
 
 static int	spe_is_comment(char *str)
 {
