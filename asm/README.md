@@ -40,14 +40,17 @@ Fichiers
 
 	struct s_list_op
 	{
-		char		*data;	//if the char[X] is a label, there is 256 possibilities
-					//so 256 labels, so s_list_label can be a simple struct s_label[256]
-		short		*types;	//not -1 is a label
+		char		*data;
+		/* if the char[X] is a label, there is 256 possibilities */
+		/* so 256 labels, so s_list_label can be a simple struct s_label[256] */
+		short		*types;
+		/* not -1 is a label */
 		s_list_op	*next;
 	};
 
-	//we don't need it bc we will use a short *type not char *type;
-	struct s_label			//if we use 256 labels only, we don't need a chained list
+	/* we don't need it bc we will use a short *type not char *type */
+	/* but if we use 256 labels only, we don't need a chained list */
+	struct s_label
 	{
 		char		*name;
 		int		addr;
