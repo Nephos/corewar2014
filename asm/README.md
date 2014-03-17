@@ -43,7 +43,7 @@ Fichiers
 	{
 		char		*data;	//if the char[X] is a label, there is 256 possibilities
 					//so 256 labels, so s_list_label can be a simple struct s_label[256]
-		char		*types;	//0 is a label, 1 is everything else
+		short		*types;	//0 is a label, 1 is everything else
 		s_list_op	*next;
 	};
 	struct s_label			//if we use 256 labels only, we don't need a chained list
