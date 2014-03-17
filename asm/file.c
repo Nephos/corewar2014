@@ -5,7 +5,7 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Thu Mar 13 15:55:28 2014 poulet_a
-** Last update Mon Mar 17 17:07:41 2014 poulet_a
+** Last update Mon Mar 17 18:00:28 2014 poulet_a
 */
 
 #include <sys/types.h>
@@ -13,6 +13,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "my/my.h"
 
 char	*asm_name_s_to_cor(char *name)
 {
@@ -21,7 +22,7 @@ char	*asm_name_s_to_cor(char *name)
   int	i;
 
   len = my_strlen(name);
-  if (i < -1)
+  if (len < -1)
     return (NULL);
   out = malloc(len + 5);
   i = 0;
@@ -30,11 +31,11 @@ char	*asm_name_s_to_cor(char *name)
       out[i] = name[i];
       i++;
     }
-  out[i + 1] = '.';
+  out[i + 0] = '.';
   out[i + 1] = 'c';
-  out[i + 1] = 'o';
-  out[i + 1] = 'r';
-  out[i + 1] = '\0';
+  out[i + 2] = 'o';
+  out[i + 3] = 'r';
+  out[i + 4] = '\0';
   return (out);
 }
 
