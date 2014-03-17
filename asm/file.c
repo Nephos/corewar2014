@@ -5,7 +5,7 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Thu Mar 13 15:55:28 2014 poulet_a
-** Last update Mon Mar 17 18:00:28 2014 poulet_a
+** Last update Mon Mar 17 19:44:34 2014 poulet_a
 */
 
 #include <sys/types.h>
@@ -14,6 +14,15 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "my/my.h"
+#include "file.h"
+
+void	asm_open_files(char *name, int fd[2])
+{
+  fd[0] = asm_open_s_file(name);
+  if ((name = asm_name_s_to_cor(name)) == NULL)
+    return ;
+  fd[1] = asm_open_cor_file(name);
+}
 
 char	*asm_name_s_to_cor(char *name)
 {
