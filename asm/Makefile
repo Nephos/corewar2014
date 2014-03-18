@@ -5,7 +5,7 @@
 ## Login   <poulet_a@epitech.net>
 ## 
 ## Started on  Tue Mar 11 08:22:15 2014 poulet_a
-## Last update Mon Mar 17 17:56:17 2014 poulet_a
+## Last update Tue Mar 18 13:52:24 2014 poulet_a
 ##
 
 CC	=	cc -g
@@ -30,7 +30,8 @@ SRCS	=	../op/op.c \
 		my/my_strdup.c \
 		my/my_strsplit.c \
 		my/my_getnbr.c \
-		my/my_putstr.c
+		my/my_putstr.c \
+		my/my_isin.c
 
 OBJS	=	$(SRCS:.c=.o)
 

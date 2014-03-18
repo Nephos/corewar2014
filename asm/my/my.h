@@ -5,7 +5,7 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Thu Mar 13 20:34:51 2014 poulet_a
-** Last update Mon Mar 17 17:55:49 2014 poulet_a
+** Last update Tue Mar 18 13:52:13 2014 poulet_a
 */
 
 #ifndef MY_H_
@@ -22,5 +22,6 @@ int	my_puterr(char *str);
 int	my_putnstr(char *str, int n);
 int	my_put2str(char *s1, char *s2);
 int	my_put3str(char *s1, char *s2, char *s3);
+int	my_isin(const char c, const char *str);
 
 #endif /* !MY_H_ */
