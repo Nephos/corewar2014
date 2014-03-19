@@ -5,12 +5,12 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Wed Mar 19 14:50:23 2014 poulet_a
-** Last update Wed Mar 19 15:08:14 2014 poulet_a
+** Last update Wed Mar 19 15:09:29 2014 poulet_a
 */
 
 #include "label.h"
 
-int	lab_valid(char *name)
+int	lab_str_valid(char *name)
 {
   int	len;
   int	i;
