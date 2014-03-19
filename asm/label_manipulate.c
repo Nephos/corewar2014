@@ -5,7 +5,7 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Wed Mar 19 14:50:23 2014 poulet_a
-** Last update Wed Mar 19 14:59:08 2014 poulet_a
+** Last update Wed Mar 19 15:08:14 2014 poulet_a
 */
 
 #include "label.h"
@@ -26,16 +26,14 @@ int	lab_valid(char *name)
 
 int	lab_get_addr(char *str)
 {
-  int	i;
   t_lab	*labels;
 
   if ((labels = lab_list()) == NULL)
     return (-1);
-  i = 0;
-  while (i < MEM_SIZE)
+  while (label->next != NULL)
     {
-      if (labels[i].name != NULL && my_match(labels[i].name, str))
-	return (labels[i].addr);
+      if (labels->name != NULL && my_match(labels->name, str))
+	return (labels->addr);
       i++;
     }
   return (-1);

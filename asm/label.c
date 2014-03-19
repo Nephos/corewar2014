@@ -5,11 +5,10 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Fri Mar 14 13:08:15 2014 poulet_a
-** Last update Wed Mar 19 15:00:36 2014 poulet_a
+** Last update Wed Mar 19 15:03:54 2014 poulet_a
 */
 
 #include <stdlib.h>
-#include "../op/op.h"
 #include "my.h"
 #include "label.h"
 
