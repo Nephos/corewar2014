@@ -5,7 +5,7 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Mon Mar 17 18:58:53 2014 poulet_a
-** Last update Mon Mar 17 19:00:55 2014 poulet_a
+** Last update Thu Mar 20 15:20:43 2014 poulet_a
 */
 
 #ifndef LIST_H_
@@ -20,8 +20,9 @@ typedef struct	s_list_label
 
 typedef struct	s_list_op
 {
-  char		*data;
+  char		*datas;
   short		*types;
+  int		size;
   s_list_op	*next;
 }		t_op;
 
