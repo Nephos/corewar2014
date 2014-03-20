@@ -5,7 +5,7 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Tue Mar 11 08:22:38 2014 poulet_a
-** Last update Thu Mar 20 14:49:08 2014 poulet_a
+** Last update Thu Mar 20 18:05:40 2014 poulet_a
 */
 
 #include <stdlib.h>
@@ -17,6 +17,8 @@
 
 int	main_convert(char *name)
 {
+  char	*cmd;
+  int	fd[2];
   t_op	*op_l;
   t_lab	*lab_l;
 
@@ -32,8 +34,6 @@ int	main_convert(char *name)
 
 int     main(int ac, char **av)
 {
-  int	fd[2];
-  char	*cmd;
   int	i;
 
   if (ac == 1)

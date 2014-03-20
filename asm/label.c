@@ -5,7 +5,7 @@
 ** Login   <poulet_a@epitech.net>
 ** 
 ** Started on  Fri Mar 14 13:08:15 2014 poulet_a
-** Last update Wed Mar 19 15:03:54 2014 poulet_a
+** Last update Thu Mar 20 18:06:40 2014 poulet_a
 */
 
 #include <stdlib.h>
@@ -31,8 +31,8 @@ t_lab	*lab_new(char *name, int addr, t_lab *next)
 {
   t_lab	*list;
 
-  list = malloc(sizeof(t_lab));
-  RET_NULL_NULL(list);
+  if ((list = malloc(sizeof(t_lab))) == NULL)
+    return (NULL);
   list->name = name;
   list->addr = addr;
   list->next = next;
