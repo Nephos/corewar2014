@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 14:45:46 2014 chapui_s
-** Last update Thu Mar 20 20:18:50 2014 chapui_s
+** Last update Fri Mar 21 15:35:27 2014 chapui_s
 */
 
 #include <stdlib.h>
@@ -33,6 +33,8 @@ int		main(int argc, char **argv)
 
   arguments.champions = NULL;
   if ((get_args(argc, argv, &arguments)) == -1)
+    return (-1);
+  if ((load_arena(&arguments)) == -1)
     return (-1);
   disp_args(&arguments);
   return (0);

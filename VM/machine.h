@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Thu Mar 20 20:40:18 2014 chapui_s
+** Last update Fri Mar 21 16:09:11 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -43,5 +43,12 @@ int			push_champion(t_champions **list_champions,
 unsigned int		my_unsigned_atoi(char *str);
 int			attribute_prog_number(t_champions *list_champions,
 					      unsigned int nb_champions);
+int			load_arena(t_args *arguments);
+void			init_arena(char *ptr, unsigned int size, int value);
+void			my_putchar(char c);
+int			load_champions_in_arena(char *arena,
+						t_args *arguments);
+
+int			my_showmem(char *str, int size);
 
 #endif /* !MACHINE_H_ */
