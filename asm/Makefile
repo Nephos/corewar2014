@@ -5,27 +5,36 @@
 ## Login   <poulet_a@epitech.net>
 ## 
 ## Started on  Tue Mar 11 08:22:15 2014 poulet_a
-## Last update Thu Mar 13 19:43:33 2014 poulet_a
+## Last update Tue Mar 18 13:52:24 2014 poulet_a
 ##
 
-CC	=	cc
+CC	=	cc -g
 
 RM	=	rm -f
 
 CFLAGS	+=	-W -Wall -pedantic
+CFLAGS	+=	-I../op -I. -Imy
 
-LFLAGS	+=	-I../op
-
-NAME	=	AsmX
+NAME	=	asm
 
 SRCS	=	../op/op.c \
 		main.c \
-		match.c
-		arguments.c \
-		files.c \
-		get_next_line.c
+		argument.c \
+		register.c \
+		file.c \
+		label.c \
+		get_cmd.c \
+		my/get_next_line.c \
+		my/my_match.c \
+		my/my_strlen.c \
+		my/my_strdup.c \
+		my/my_strsplit.c \
+		my/my_getnbr.c \
+		my/my_putstr.c \
+		my/my_isin.c
 
 OBJS	=	$(SRCS:.c=.o)
+
 
 all:		$(NAME)
 
