@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 16:29:06 2014 chapui_s
-** Last update Thu Mar 20 20:39:57 2014 chapui_s
+** Last update Fri Mar 21 22:44:23 2014 chapui_s
 */
 
 #include "machine.h"
@@ -37,7 +37,7 @@ int		is_error_in_args(int argc, char **argv)
   return (0);
 }
 
-int			save_champion(int i, char **argv, t_args *arguments)
+int			save_champion(int i, char **argv, t_corewar *arguments)
 {
   int			cur;
   unsigned int		prog_number;
@@ -63,7 +63,7 @@ int			save_champion(int i, char **argv, t_args *arguments)
   return (0);
 }
 
-void		save_args(int argc, char **argv, t_args *arguments)
+void		save_args(int argc, char **argv, t_corewar *arguments)
 {
   int		i;
   unsigned int	nb_cor;
@@ -79,7 +79,7 @@ void		save_args(int argc, char **argv, t_args *arguments)
   arguments->nb_champions = nb_cor;
 }
 
-int		get_args(int argc, char **argv, t_args *arguments)
+int		get_args(int argc, char **argv, t_corewar *arguments)
 {
   (void)arguments;
   if (is_error_in_args(argc, argv) == -1)
@@ -87,6 +87,9 @@ int		get_args(int argc, char **argv, t_args *arguments)
   save_args(argc, argv, arguments);
   if ((attribute_prog_number(arguments->champions,
 			     arguments->nb_champions)) == -1)
+    return (-1);
+  if ((attribute_address(arguments->champions,
+			 arguments->nb_champions)) == -1)
     return (-1);
   return (0);
 }

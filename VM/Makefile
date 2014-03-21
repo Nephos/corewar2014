@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Fri Mar 21 16:08:09 2014 chapui_s
+## Last update Fri Mar 21 20:54:51 2014 chapui_s
 ##
 
 NAME		= corewar
@@ -24,6 +24,7 @@ SRC		= main.c \
 	  	  $(UTIL_DIR)/my_atoi.c \
 	  	  $(UTIL_DIR)/my_showmem.c \
 	  	  $(UTIL_DIR)/attribute_prog_number.c \
+	  	  $(UTIL_DIR)/attribute_address.c \
 	  	  $(UTIL_DIR)/check_args.c
 
 OBJ		= $(SRC:.c=.o)

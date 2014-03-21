@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.net>
 **
 ** Started on  Mon Oct  7 18:05:37 2013 chapui_s
-** Last update Fri Mar 21 16:03:23 2014 chapui_s
+** Last update Fri Mar 21 22:04:58 2014 chapui_s
 */
 
 #include "../machine.h"
@@ -20,8 +20,8 @@ int		my_putnbr_base(int nbr, char *base, int is_write)
     nbr = -nbr;
   while (nbr > 0)
   {
-    result[i] = base[nbr % 16];
-    nbr = nbr / 16;
+    result[i] = base[nbr % 10];
+    nbr = nbr / 10;
     i = i + 1;
   }
   i = i - 1;
@@ -46,18 +46,18 @@ void		write_addr(int line)
 
   i = 0;
   addr = 16 * line;
-  nb_zeros = my_putnbr_base(addr, "0123456789ABCDEF", 0);
+  nb_zeros = my_putnbr_base(addr, "0123456789", 0);
   while (i < (8 - nb_zeros))
   {
     my_putchar('0');
     i = i + 1;
   }
-  my_putnbr_base(addr, "0123456789ABCDEF", 1);
+  my_putnbr_base(addr, "0123456789", 1);
   my_putchar(':');
   my_putchar(' ');
 }
 
-void		write_car(char *str, int begin, int end)
+void		write_car(unsigned char *str, int begin, int end)
 {
   int		i;
 
@@ -74,17 +74,21 @@ void		write_car(char *str, int begin, int end)
   }
 }
 
-void		write_hex(int i, int line_cur, int size, char *str)
+void		my_put_hexa(unsigned char nb, char *base, int is_first)
+{
+  if (nb < 16 && is_first == 1)
+    my_putchar('0');
+  if (nb >= 16)
+    my_put_hexa(nb / 16, base, 0);
+  my_putchar(base[(nb % 16)]);
+}
+
+void		write_hex(int i, int line_cur, int size, unsigned char *str)
 {
   while (i < (16 * line_cur + 16) && i < size)
   {
-    if (i % 2 == 0 && i != 16 * line_cur)
-      my_putchar(' ');
-    if (str[i] == '\0')
-      my_putchar('0');
-    if (str[i] == '\0')
-      my_putchar('0');
-    my_putnbr_base(str[i], "0123456789ABCDEF", 1);
+    my_putchar(' ');
+    my_put_hexa(str[i], "0123456789abcdef", 1);
     i = i + 1;
   }
   while (i < (16 * line_cur + 16))
@@ -97,7 +101,7 @@ void		write_hex(int i, int line_cur, int size, char *str)
   }
 }
 
-int		my_showmem(char *str, int size)
+int		my_showmem(unsigned char *str, int size)
 {
   int		nb_lines;
   int		line_cur;
@@ -110,7 +114,7 @@ int		my_showmem(char *str, int size)
   {
     write_addr(line_cur);
     write_hex(i, line_cur, size, str);
-    write_car(str, 16 * line_cur, size);
+    /* write_car(str, 16 * line_cur, size); */
     my_putchar('\n');
     line_cur = line_cur + 1;
     i = 16 * line_cur;

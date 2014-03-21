@@ -5,10 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 15:46:53 2014 chapui_s
-** Last update Fri Mar 21 15:59:32 2014 chapui_s
+** Last update Fri Mar 21 18:22:00 2014 chapui_s
 */
 
-void		init_arena(char *ptr, unsigned int size, int value)
+void		init_arena(unsigned char *ptr, unsigned int size, int value)
 {
   unsigned int	i;
 
