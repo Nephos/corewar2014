@@ -5,12 +5,14 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Fri Mar 21 20:54:51 2014 chapui_s
+## Last update Mon Mar 24 20:07:34 2014 chapui_s
 ##
 
 NAME		= corewar
 
 UTIL_DIR	= utils
+
+GUI_DIR		= gui
 
 SRC		= main.c \
 		  arguments.c \
@@ -25,7 +27,11 @@ SRC		= main.c \
 	  	  $(UTIL_DIR)/my_showmem.c \
 	  	  $(UTIL_DIR)/attribute_prog_number.c \
 	  	  $(UTIL_DIR)/attribute_address.c \
-	  	  $(UTIL_DIR)/check_args.c
+	  	  $(UTIL_DIR)/check_args.c \
+		  $(GUI_DIR)/my_gui.c \
+		  $(GUI_DIR)/hex_to_str.c \
+		  $(GUI_DIR)/get_color.c
+
 
 OBJ		= $(SRC:.c=.o)
 
@@ -33,12 +39,12 @@ CC		= gcc
 
 RM		= rm -rf
 
-CFLAGS		= -Wall -Wextra
+CFLAGS		= -lSDL -lSDL_ttf -Wall -Wextra -ggdb
 
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-		$(CC) -o $(NAME) $(OBJ)
+		$(CC) -o $(NAME) $(OBJ) $(CFLAGS)
 
 clean:
 		$(RM) $(OBJ)

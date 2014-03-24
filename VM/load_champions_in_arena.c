@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 16:06:34 2014 chapui_s
-** Last update Fri Mar 21 22:44:52 2014 chapui_s
+** Last update Mon Mar 24 18:54:17 2014 chapui_s
 */
 
 #include <sys/types.h>
@@ -17,6 +17,7 @@
 #include "../op/op.h"
 
 static int		load_file_in_arena(unsigned char *arena,
+					   unsigned char *info_arena,
 					   t_champions *champions)
 {
   int			fd;
@@ -34,6 +35,7 @@ static int		load_file_in_arena(unsigned char *arena,
     while ((s_read = read(fd, &buf, 1)) > 0)
     {
       arena[i] = buf;
+      info_arena[i] = champions->prog_number;
       i += 1;
     }
     close(fd);
@@ -75,10 +77,11 @@ static int		init_values_champions(t_champions *champions)
 }
 
 int			load_champions_in_arena(unsigned char *arena,
-						t_corewar *arguments)
+						unsigned char *info_arena,
+						t_corewar *core)
 {
-  if ((load_file_in_arena(arena, arguments->champions)) == -1)
+  if ((load_file_in_arena(arena, info_arena, core->champions)) == -1)
     return (-1);
-  init_values_champions(arguments->champions);
+  init_values_champions(core->champions);
   return (0);
 }

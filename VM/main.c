@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 14:45:46 2014 chapui_s
-** Last update Fri Mar 21 22:44:02 2014 chapui_s
+** Last update Mon Mar 24 18:51:45 2014 chapui_s
 */
 
 #include <stdlib.h>
@@ -14,13 +14,13 @@
 
 #include <stdio.h>
 
-void		disp_args(t_corewar *arguments)
+void		disp_args(t_corewar *core)
 {
   t_champions	*tmp;
   int		i;
 
-  tmp = arguments->champions;
-  printf("nb_champion = %d\n\n", arguments->nb_champions);
+  tmp = core->champions;
+  printf("nb_champion = %d\n\n", core->nb_champions);
   while (tmp)
   {
     i = 1;
@@ -46,13 +46,13 @@ void		disp_args(t_corewar *arguments)
 
 int		main(int argc, char **argv)
 {
-  t_corewar	arguments;
+  t_corewar	core;
 
-  arguments.champions = NULL;
-  if ((get_args(argc, argv, &arguments)) == -1)
+  core.champions = NULL;
+  if ((get_args(argc, argv, &core)) == -1)
     return (-1);
-  if ((load_arena(&arguments)) == -1)
+  if ((load_arena(&core)) == -1)
     return (-1);
-  disp_args(&arguments);
+  disp_args(&core);
   return (0);
 }
