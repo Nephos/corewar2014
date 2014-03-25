@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 16:06:34 2014 chapui_s
-** Last update Mon Mar 24 18:54:17 2014 chapui_s
+** Last update Mon Mar 24 23:58:33 2014 chapui_s
 */
 
 #include <sys/types.h>
@@ -30,6 +30,8 @@ static int		load_file_in_arena(unsigned char *arena,
     i = champions->load_address;
     if ((fd = open(champions->filename, O_RDONLY)) == -1)
       return (my_putstr("error: could not open file\n", 2));
+    if (get_name_comment_champions(champions, fd) == -1)
+      return (-1);
     if ((lseek(fd, sizeof(struct header_s), SEEK_SET)) == -1)
       return (my_putstr("error: lseek\n", 2));
     while ((s_read = read(fd, &buf, 1)) > 0)
@@ -37,6 +39,7 @@ static int		load_file_in_arena(unsigned char *arena,
       arena[i] = buf;
       info_arena[i] = champions->prog_number;
       i += 1;
+      (i == MEM_SIZE - 1) ? (i = 0) : (0);
     }
     close(fd);
     champions = champions->next;
