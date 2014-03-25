@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Mon Mar 24 20:07:34 2014 chapui_s
+## Last update Tue Mar 25 17:57:12 2014 
 ##
 
 NAME		= corewar
@@ -53,3 +53,5 @@ fclean:		clean
 		$(RM) $(NAME)
 
 re:		fclean all
+
+.PHONY:		all clean fclean re
