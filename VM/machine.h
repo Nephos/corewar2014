@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Tue Mar 25 18:13:15 2014 chapui_s
+** Last update Tue Mar 25 18:45:06 2014 
 */
 
 #ifndef MACHINE_H_
@@ -51,10 +51,7 @@ typedef struct		s_instruction
 {
   unsigned char		code;
   unsigned char		type;
-  unsigned char		param_one;
-  unsigned char		param_two;
-  unsigned char		param_three;
-  unsigned char		param_four;
+  unsigned int		params[4];
 }			t_instruction;
 
 # define ALLOC_FAILED	"error: could not alloc\n"

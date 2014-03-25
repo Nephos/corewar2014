@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 16:06:34 2014 chapui_s
-** Last update Mon Mar 24 23:58:33 2014 chapui_s
+** Last update Tue Mar 25 18:49:52 2014 
 */
 
 #include <sys/types.h>
@@ -73,7 +73,6 @@ static int		init_values_champions(t_champions *champions)
     champions->carry = 0;
     champions->last_live = 0;
     champions->cycle_to_wait = 0;
-    champions->next_instruction = 0;
     champions = champions->next;
   }
   return (0);

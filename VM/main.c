@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 14:45:46 2014 chapui_s
-** Last update Tue Mar 25 00:00:16 2014 chapui_s
+** Last update Tue Mar 25 18:49:34 2014 
 */
 
 #include <stdlib.h>
@@ -32,7 +32,6 @@ void		disp_args(t_corewar *core)
     printf("carry = %d\n", tmp->carry);
     printf("last_live = %d\n", tmp->last_live);
     printf("cycle_to_wait = %d\n", tmp->cycle_to_wait);
-    printf("next_instruction = %d\n", tmp->next_instruction);
     printf("name = %s\n", tmp->name);
     printf("comment = %s\n", tmp->comment);
     /* while (i < REG_NUMBER + 1) */

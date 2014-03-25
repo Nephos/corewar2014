@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Tue Mar 25 18:27:05 2014 
+## Last update Tue Mar 25 18:52:44 2014 
 ##
 
 NAME		= corewar
@@ -36,7 +36,8 @@ SRC		= main.c \
 		  $(GUI_DIR)/hex_to_str.c \
 		  $(GUI_DIR)/get_color.c \
 		  $(EXEC_DIR)/exec_instructions.c \
-		  $(EXEC_DIR)/get_instruction.c
+		  $(EXEC_DIR)/get_instruction.c \
+		  ../op/op.c
 
 OBJ		= $(SRC:.c=.o)
 
