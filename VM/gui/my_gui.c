@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 16:31:07 2014 chapui_s
-** Last update Mon Mar 24 20:24:37 2014 chapui_s
+** Last update Tue Mar 25 15:36:25 2014 chapui_s
 */
 
 #include <SDL/SDL.h>
@@ -25,7 +25,6 @@ void		sdl_loop(t_gui *gui)
     SDL_WaitEvent(&event);
     if (event.type == SDL_QUIT)
     {
-      TTF_CloseFont(gui->font);
       SDL_Quit();
       TTF_Quit();
       stop = 1;
@@ -57,6 +56,8 @@ int		get_arena(t_corewar *core,
     }
     i += 1;
   }
+  TTF_CloseFont(gui->font);
+//  disp_info_players(core, gui);
   sdl_loop(gui);
   return (0);
 }
@@ -83,6 +84,7 @@ int		my_gui(t_corewar *core,
     if ((gui->font = TTF_OpenFont("arial.ttf", 11)) == NULL)
       return (my_putstr("error: TTF_OpenFont\n", 2));
   }
+  exec_instructions(core, core->champions);
   if ((get_arena(core, size, gui)) == -1)
     return (-1);
   return (0);

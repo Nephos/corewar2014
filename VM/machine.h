@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Mon Mar 24 19:52:47 2014 chapui_s
+** Last update Tue Mar 25 18:13:15 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -19,13 +19,14 @@ typedef struct		s_champions
   char			*filename;
   unsigned int		prog_number;
   unsigned int		load_address;
+  char			*name;
+  char			*comment;
   unsigned int		is_dead;
   int			*reg;
   unsigned int		pc;
   unsigned int		carry;
   unsigned int		last_live;
   unsigned int		cycle_to_wait;
-  unsigned int		next_instruction;
   struct s_champions	*next;
 }			t_champions;
 
@@ -46,7 +47,33 @@ typedef struct		s_gui
   SDL_Color		my_color;
 }			t_gui;
 
+typedef struct		s_instruction
+{
+  unsigned char		code;
+  unsigned char		type;
+  unsigned char		param_one;
+  unsigned char		param_two;
+  unsigned char		param_three;
+  unsigned char		param_four;
+}			t_instruction;
+
 # define ALLOC_FAILED	"error: could not alloc\n"
+# define LIVE		1
+# define LD		2
+# define ST		3
+# define ADD		4
+# define SUB		5
+# define AND		6
+# define OR		7
+# define XOR		8
+# define ZJMP		9
+# define LDI		10
+# define STI		11
+# define FORK		12
+# define LLD		13
+# define LLDI		14
+# define LFORK		15
+# define AFF		16
 
 int			usage(void);
 int			my_putstr(char *s, int fd);
@@ -79,4 +106,13 @@ char			*hex_to_str(unsigned char c, char *str);
 int			get_color(t_gui *gui,
 				  t_corewar *core,
 				  int i);
+int			get_name_comment_champions(t_champions *champions,
+						   int fd);
+int			my_strlen(char *s);
+void			get_instruction(t_corewar *core,
+					t_champions *champions,
+					t_instruction *instruction);
+int			exec_instructions(t_corewar *core,
+					  t_champions *champions);
+
 #endif /* !MACHINE_H_ */

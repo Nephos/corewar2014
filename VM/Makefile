@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Tue Mar 25 18:15:05 2014 
+## Last update Tue Mar 25 18:27:05 2014 
 ##
 
 NAME		= corewar
@@ -13,6 +13,8 @@ NAME		= corewar
 UTIL_DIR	= utils
 
 GUI_DIR		= gui
+
+EXEC_DIR	= exec_instructions
 
 SRC		= main.c \
 		  arguments.c \
@@ -27,11 +29,14 @@ SRC		= main.c \
 	  	  $(UTIL_DIR)/my_showmem.c \
 	  	  $(UTIL_DIR)/attribute_prog_number.c \
 	  	  $(UTIL_DIR)/attribute_address.c \
+	  	  $(UTIL_DIR)/my_strlen.c \
 	  	  $(UTIL_DIR)/check_args.c \
+	  	  $(UTIL_DIR)/get_info_champions.c \
 		  $(GUI_DIR)/my_gui.c \
 		  $(GUI_DIR)/hex_to_str.c \
-		  $(GUI_DIR)/get_color.c
-
+		  $(GUI_DIR)/get_color.c \
+		  $(EXEC_DIR)/exec_instructions.c \
+		  $(EXEC_DIR)/get_instruction.c
 
 OBJ		= $(SRC:.c=.o)
 

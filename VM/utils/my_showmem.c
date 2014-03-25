@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.net>
 **
 ** Started on  Mon Oct  7 18:05:37 2013 chapui_s
-** Last update Fri Mar 21 22:04:58 2014 chapui_s
+** Last update Tue Mar 25 14:34:30 2014 chapui_s
 */
 
 #include "../machine.h"
@@ -114,7 +114,7 @@ int		my_showmem(unsigned char *str, int size)
   {
     write_addr(line_cur);
     write_hex(i, line_cur, size, str);
-    /* write_car(str, 16 * line_cur, size); */
+    write_car(str, 16 * line_cur, size);
     my_putchar('\n');
     line_cur = line_cur + 1;
     i = 16 * line_cur;
