@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Tue Mar 25 18:52:44 2014 
+## Last update Fri Mar 28 22:20:44 2014 chapui_s
 ##
 
 NAME		= corewar
@@ -13,6 +13,8 @@ NAME		= corewar
 UTIL_DIR	= utils
 
 GUI_DIR		= gui
+
+FUNC_DIR	= functions
 
 EXEC_DIR	= exec_instructions
 
@@ -25,6 +27,7 @@ SRC		= main.c \
 	  	  $(UTIL_DIR)/usage.c \
 	  	  $(UTIL_DIR)/my_strcmp.c \
 	  	  $(UTIL_DIR)/my_puts.c \
+	  	  $(UTIL_DIR)/read_write_arena.c \
 	  	  $(UTIL_DIR)/my_atoi.c \
 	  	  $(UTIL_DIR)/my_showmem.c \
 	  	  $(UTIL_DIR)/attribute_prog_number.c \
@@ -37,6 +40,18 @@ SRC		= main.c \
 		  $(GUI_DIR)/get_color.c \
 		  $(EXEC_DIR)/exec_instructions.c \
 		  $(EXEC_DIR)/get_instruction.c \
+		  $(FUNC_DIR)/my_live.c \
+		  $(FUNC_DIR)/is_type.c \
+		  $(FUNC_DIR)/my_ld.c \
+		  $(FUNC_DIR)/my_st.c \
+		  $(FUNC_DIR)/my_add.c \
+		  $(FUNC_DIR)/my_sub.c \
+		  $(FUNC_DIR)/my_and.c \
+		  $(FUNC_DIR)/my_or.c \
+		  $(FUNC_DIR)/my_xor.c \
+		  $(FUNC_DIR)/my_ldi.c \
+		  $(FUNC_DIR)/my_sti.c \
+		  $(FUNC_DIR)/is_good_register.c \
 		  ../op/op.c
 
 OBJ		= $(SRC:.c=.o)

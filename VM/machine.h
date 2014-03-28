@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Thu Mar 27 21:21:13 2014 chapui_s
+** Last update Fri Mar 28 22:20:56 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -53,6 +53,14 @@ typedef struct		s_instruction
   unsigned char		type;
   int			params[4];
 }			t_instruction;
+
+typedef struct		s_functions
+{
+  int			numero;
+  void			(*function)(t_corewar *core,
+				    t_champions *champions,
+				    t_instruction *instruction);
+}			t_functions;
 
 # define ALLOC_FAILED	"error: could not alloc\n"
 # define LIVE		1
@@ -111,5 +119,44 @@ void			get_instruction(t_corewar *core,
 					t_instruction *instruction);
 int			exec_instructions(t_corewar *core,
 					  t_champions *champions);
+void			my_live(t_corewar *core,
+				t_champions *champions,
+				t_instruction *instruction);
+void			my_ld(t_corewar *core,
+				t_champions *champions,
+				t_instruction *instruction);
+void			my_st(t_corewar *core,
+			      t_champions *champions,
+			      t_instruction *instruction);
+void			my_add(t_corewar *core,
+			       t_champions *champions,
+			       t_instruction *instruction);
+void			my_sub(t_corewar *core,
+			       t_champions *champions,
+			       t_instruction *instruction);
+void			my_and(t_corewar *core,
+			       t_champions *champions,
+			       t_instruction *instruction);
+void			my_or(t_corewar *core,
+			      t_champions *champions,
+			      t_instruction *instruction);
+void			my_xor(t_corewar *core,
+			       t_champions *champions,
+			       t_instruction *instruction);
+void			my_ldi(t_corewar *core,
+			       t_champions *champions,
+			       t_instruction *instruction);
+void			my_sti(t_corewar *core,
+			       t_champions *champions,
+			       t_instruction *instruction);
+int			read_arena(t_corewar *core, int index, int n_to_read);
+void			write_arena_four(t_corewar *core,
+					 t_champions *champions,
+					 int to_write,
+					 int index);
+int			is_direct(int octet_type, int num_param);
+int			is_indirect(int octet_type, int num_param);
+int			is_register(unsigned char octet_type, int num_param);
+int			is_good_register(int nb);
 
 #endif /* !MACHINE_H_ */
