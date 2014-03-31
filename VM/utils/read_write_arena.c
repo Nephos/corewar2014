@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 28 18:57:53 2014 chapui_s
-** Last update Fri Mar 28 22:34:59 2014 chapui_s
+** Last update Fri Mar 28 22:43:25 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -104,7 +104,6 @@ void		write_arena_four(t_corewar *core,
   core->arena[(index + 2) % MEM_SIZE] =
     (to_write & 0b00000000000000001111111100000000) >> 8;
   core->info_arena[(index + 2) % MEM_SIZE] = champions->prog_number;
-  core->arena[(index + 3) % MEM_SIZE] =
-    (to_write & 0b11111111);
+  core->arena[(index + 3) % MEM_SIZE] = (to_write & 0b11111111);
   core->info_arena[(index + 3) % MEM_SIZE] = champions->prog_number;
 }
