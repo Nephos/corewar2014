@@ -5,9 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 28 18:45:40 2014 chapui_s
-** Last update Fri Mar 28 21:19:54 2014 chapui_s
+** Last update Mon Mar 31 22:53:50 2014 chapui_s
 */
 
+#include "../../op/op.h"
 #include "../machine.h"
 
 void		my_st(t_corewar *core,
@@ -15,6 +16,7 @@ void		my_st(t_corewar *core,
 		      t_instruction *instruction)
 {
   int		value_to_store;
+  int		index;
 
   (void)core;
   value_to_store = 0;
@@ -26,5 +28,10 @@ void		my_st(t_corewar *core,
       champions->reg[instruction->params[1]] = value_to_store;
   }
   else if (is_indirect(instruction->type, 2) == 1)
-    write_arena_four(core, champions, value_to_store, instruction->params[1]);
+  {
+    printf("INDIRECT value_to_store = %d param[1] = %d\n", value_to_store, instruction->params[1]);
+    index = champions->pc - 5 + (instruction->params[1] % IDX_MOD);
+    printf("INDEX = %d\n", index);
+    write_arena_four(core, champions, value_to_store, index);
+  }
 }

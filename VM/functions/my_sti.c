@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 28 18:45:40 2014 chapui_s
-** Last update Fri Mar 28 22:35:41 2014 chapui_s
+** Last update Mon Mar 31 22:34:32 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -85,17 +85,25 @@ void		my_sti(t_corewar *core,
   value_to_store = get_value_to_store(core, champions, instruction);
   second_value = get_second_value(core, champions, instruction);
   third_value = get_third_value(core, champions, instruction);
-  if (is_indirect(instruction->type, 2) == 1)
-  {
-    write_arena_four(core, champions, value_to_store,
-		     champions->pc + ((second_value + third_value) % IDX_MOD));
-  }
-  else
-  {
-    ptr = second_value + third_value;
+  /* if (is_indirect(instruction->type, 2) == 1) */
+  /* { */
+    /* printf("DIRECT value = %d v2 = %d v3 = %d ptr = %d\n", value_to_store,  second_value, third_value, */
+    /* 	   champions->pc + ((second_value % IDX_MOD) + (third_value % IDX_MOD))); */
+    /* write_arena_four(core, champions, value_to_store, */
+    /* 		     champions->pc + (second_value + third_value % IDX_MOD)); */
+  /*   write_arena_four(core, champions, value_to_store, */
+  /*   		     champions->pc + ((second_value + third_value) % IDX_MOD)); */
+  /* } */
+  /* else */
+  /* { */
+    ptr = champions->pc - 7 + (second_value % IDX_MOD) + (third_value % IDX_MOD);
+    printf("PTR avant = %d MEMSIZE = %d\n", ptr, MEM_SIZE);
+    ptr = ptr % MEM_SIZE;
     if (ptr < 0)
       ptr = MEM_SIZE + ptr;
+    printf("DIRECT value = %d v2 = %d v3 = %d ptr = %d\n", value_to_store,  second_value, third_value, ptr);
     write_arena_four(core, champions, value_to_store,
-		     (ptr % MEM_SIZE));
-  }
+  		     (ptr % MEM_SIZE));
+  /* } */
+  champions->carry = (value_to_store) ? (0) : (1);
 }

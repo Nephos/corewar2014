@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Fri Mar 28 22:20:56 2014 chapui_s
+** Last update Mon Mar 31 19:42:50 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -149,6 +149,9 @@ void			my_ldi(t_corewar *core,
 void			my_sti(t_corewar *core,
 			       t_champions *champions,
 			       t_instruction *instruction);
+void			my_zjmp(t_corewar *core,
+				t_champions *champions,
+				t_instruction *instruction);
 int			read_arena(t_corewar *core, int index, int n_to_read);
 void			write_arena_four(t_corewar *core,
 					 t_champions *champions,
