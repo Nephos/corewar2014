@@ -5,13 +5,13 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 31 19:37:23 2014 chapui_s
-** Last update Tue Apr  1 00:08:30 2014 chapui_s
+** Last update Thu Apr  3 01:18:16 2014 chapui_s
 */
 
 #include "../../op/op.h"
 #include "../machine.h"
 
-void		my_zjmp(t_corewar *core,
+int		my_zjmp(t_corewar *core,
 			t_champions *champions,
 			t_instruction *instruction)
 {
@@ -20,10 +20,11 @@ void		my_zjmp(t_corewar *core,
   (void)core;
   if (champions->carry == 1)
   {
-    where_to_go = champions->pc + (instruction->params[0] % IDX_MOD);
-    where_to_go = (where_to_go - 3) % MEM_SIZE;
+    where_to_go = champions->pc - 3 + (instruction->params[0] % IDX_MOD);
+    where_to_go = where_to_go % MEM_SIZE;
     while (where_to_go < 0)
       where_to_go += MEM_SIZE;
     champions->pc = where_to_go;
   }
+  return (0);
 }

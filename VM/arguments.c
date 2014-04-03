@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 16:29:06 2014 chapui_s
-** Last update Mon Mar 24 18:52:30 2014 chapui_s
+** Last update Wed Apr  2 23:00:04 2014 chapui_s
 */
 
 #include "machine.h"
@@ -55,7 +55,7 @@ int			save_champion(int i, char **argv, t_corewar *core)
       load_address = my_unsigned_atoi(argv[i + 1]);
     i -= 1;
   }
-  if ((push_champion(&(core->champions),
+  if ((push_champion(core,
 		     argv[cur],
 		     prog_number,
 		     load_address)) == -1)

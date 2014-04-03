@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 28 18:45:40 2014 chapui_s
-** Last update Mon Mar 31 22:34:32 2014 chapui_s
+** Last update Wed Apr  2 18:05:24 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -73,7 +73,7 @@ static int	get_third_value(t_corewar *core,
   return (third_value);
 }
 
-void		my_sti(t_corewar *core,
+int		my_sti(t_corewar *core,
 		       t_champions *champions,
 		       t_instruction *instruction)
 {
@@ -97,13 +97,14 @@ void		my_sti(t_corewar *core,
   /* else */
   /* { */
     ptr = champions->pc - 7 + (second_value % IDX_MOD) + (third_value % IDX_MOD);
-    printf("PTR avant = %d MEMSIZE = %d\n", ptr, MEM_SIZE);
+    /* printf("PTR avant = %d MEMSIZE = %d\n", ptr, MEM_SIZE); */
     ptr = ptr % MEM_SIZE;
     if (ptr < 0)
       ptr = MEM_SIZE + ptr;
-    printf("DIRECT value = %d v2 = %d v3 = %d ptr = %d\n", value_to_store,  second_value, third_value, ptr);
+    /* printf("DIRECT value = %d v2 = %d v3 = %d ptr = %d\n", value_to_store,  second_value, third_value, ptr); */
     write_arena_four(core, champions, value_to_store,
   		     (ptr % MEM_SIZE));
   /* } */
   champions->carry = (value_to_store) ? (0) : (1);
+  return (0);
 }

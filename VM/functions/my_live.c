@@ -5,12 +5,28 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 28 17:28:36 2014 chapui_s
-** Last update Mon Mar 31 22:59:17 2014 chapui_s
+** Last update Thu Apr  3 00:07:20 2014 chapui_s
 */
 
 #include "../machine.h"
 
-void		my_live(t_corewar *core,
+int		get_size_list(t_corewar *core)
+{
+  t_champions	*tmp;
+  int		size;
+
+  size = 0;
+  tmp = core->champions;
+  while (tmp)
+  {
+    if (tmp->is_dead == 0)
+      size += 1;
+    tmp = tmp->next;
+  }
+  return (size);
+}
+
+int		my_live(t_corewar *core,
 			t_champions *champions,
 			t_instruction *instruction)
 {
@@ -18,7 +34,12 @@ void		my_live(t_corewar *core,
   while (champions && instruction)
   {
     if ((int)(champions->prog_number) == instruction->params[0])
+    {
+      printf("%s still alive !\n", champions->name);
       champions->last_live = 0;
+      core->nbr_live_cur += 1;
+    }
     champions = champions->next;
   }
+  return (0);
 }

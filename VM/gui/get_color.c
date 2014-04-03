@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 18:49:25 2014 chapui_s
-** Last update Mon Mar 24 19:56:10 2014 chapui_s
+** Last update Wed Apr  2 23:33:19 2014 chapui_s
 */
 
 #include <SDL/SDL.h>
@@ -17,7 +17,9 @@ static int	is_pc(t_champions *champions, int i)
   while (champions)
   {
     if (champions->pc == (unsigned int)i)
+    {
       return (1);
+    }
     champions = champions->next;
   }
   return (0);
@@ -48,28 +50,55 @@ static int	set_color_with_pc(t_gui *gui,
 				  int i)
 {
   SDL_Color	fg_color;
-  char		*str;
+  char		str[3];
 
   fg_color.r = 0;
   fg_color.g = 0;
   fg_color.b = 0;
   fg_color.unused = 0;
-  if ((str = (char*)malloc(3)) == NULL)
-    return (my_putstr("error: malloc\n", 2));
+  /* if ((str = (char*)malloc(3)) == NULL) */
+  /*   return (my_putstr("error: malloc\n", 2)); */
   if (is_pc(core->champions, i) == 1)
     gui->byte_arena = TTF_RenderText_Shaded(gui->font,
-					    hex_to_str(core->arena[i], str),
+					    hex_to_str(core->arena[i], &str[0]),
 					    fg_color,
 					    gui->my_color);
   else
     gui->byte_arena = TTF_RenderText_Solid(gui->font,
-					   hex_to_str(core->arena[i], str),
-					   gui->my_color);
-  free(str);
+  					   hex_to_str(core->arena[i], &str[0]),
+  					   gui->my_color);
+  /* free(str); */
   if (gui->byte_arena == NULL)
     return (my_putstr("error: TTF_RenderText\n", 2));
   return (0);
 }
+/* static int	set_color_with_pc(t_gui *gui, */
+/* 				  t_corewar *core, */
+/* 				  int i) */
+/* { */
+/*   SDL_Color	fg_color; */
+/*   char		*str; */
+
+/*   fg_color.r = 0; */
+/*   fg_color.g = 0; */
+/*   fg_color.b = 0; */
+/*   fg_color.unused = 0; */
+/*   if ((str = (char*)malloc(3)) == NULL) */
+/*     return (my_putstr("error: malloc\n", 2)); */
+/*   if (is_pc(core->champions, i) == 1) */
+/*     gui->byte_arena = TTF_RenderText_Shaded(gui->font, */
+/* 					    hex_to_str(core->arena[i], str), */
+/* 					    fg_color, */
+/* 					    gui->my_color); */
+/*   else */
+/*     gui->byte_arena = TTF_RenderText_Solid(gui->font, */
+/*   					   hex_to_str(core->arena[i], str), */
+/*   					   gui->my_color); */
+/*   free(str); */
+/*   if (gui->byte_arena == NULL) */
+/*     return (my_putstr("error: TTF_RenderText\n", 2)); */
+/*   return (0); */
+/* } */
 
 int		get_color(t_gui *gui,
 			  t_corewar *core,

@@ -5,18 +5,11 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Tue Mar 25 15:28:46 2014 chapui_s
-** Last update Mon Mar 31 23:34:00 2014 chapui_s
+** Last update Thu Apr  3 00:38:12 2014 chapui_s
 */
 
 #include "../machine.h"
 #include "../../op/op.h"
-
-void		putbin(unsigned int nb)
-{
-  if (nb >= 2)
-    putbin(nb / 2);
-  my_putchar((nb % 2) + '0');
-}
 
 static void	fulfil_params(t_corewar *core,
 			      t_champions *champion,
@@ -68,6 +61,7 @@ static void	fulfil_params(t_corewar *core,
     i += 1;
   }
   champion->pc += decal - champion->pc;
+  champion->pc = champion->pc % MEM_SIZE;
 }
 
 static void	get_type_and_param(t_corewar *core,
@@ -77,7 +71,7 @@ static void	get_type_and_param(t_corewar *core,
   if (instruction->code != LIVE && instruction->code != ZJMP
       && instruction->code != FORK && instruction->code != LFORK)
     {
-      instruction->type = core->arena[champions->pc + 1];
+      instruction->type = core->arena[(champions->pc + 1) % MEM_SIZE];
       fulfil_params(core, champions, instruction);
     }
   else
@@ -101,7 +95,7 @@ void		get_instruction(t_corewar *core,
 				t_instruction *instruction)
 {
   instruction->code = core->arena[champions->pc];
-  if (instruction->code > 0 && instruction->code <= REG_NUMBER)
+  if (instruction->code >= 1 && instruction->code <= 16)
   {
     instruction->params[0] = 0;
     instruction->params[1] = 0;

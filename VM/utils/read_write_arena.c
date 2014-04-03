@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 28 18:57:53 2014 chapui_s
-** Last update Mon Mar 31 23:37:34 2014 chapui_s
+** Last update Wed Apr  2 20:01:17 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -98,27 +98,29 @@ void		write_arena_four(t_corewar *core,
 				 int to_write,
 				 int index)
 {
+  (void)champions;
+  core->screen_update = 1;
   while (index < 0)
     index += MEM_SIZE;
   core->arena[index % MEM_SIZE] = (to_write >> 24);
 
-  /* core->info_arena[index % MEM_SIZE] = champions->prog_number; */
-  core->info_arena[index % MEM_SIZE] = 2;
+  core->info_arena[index % MEM_SIZE] = champions->color_gui;
+  /* core->info_arena[index % MEM_SIZE] = 2; */
 
   core->arena[(index + 1) % MEM_SIZE] =
     (to_write & 0b00000000111111110000000000000000) >> 16;
 
-  /* core->info_arena[(index + 1) % MEM_SIZE] = champions->prog_number; */
-  core->info_arena[(index + 1) % MEM_SIZE] = 2;
+  core->info_arena[(index + 1) % MEM_SIZE] = champions->color_gui;
+  /* core->info_arena[(index + 1) % MEM_SIZE] = 2; */
 
   core->arena[(index + 2) % MEM_SIZE] =
     (to_write & 0b00000000000000001111111100000000) >> 8;
 
-  /* core->info_arena[(index + 2) % MEM_SIZE] = champions->prog_number; */
-  core->info_arena[(index + 2) % MEM_SIZE] = 2;
+  core->info_arena[(index + 2) % MEM_SIZE] = champions->color_gui;
+  /* core->info_arena[(index + 2) % MEM_SIZE] = 2; */
 
   core->arena[(index + 3) % MEM_SIZE] = (to_write & 0b11111111);
 
-  /* core->info_arena[(index + 3) % MEM_SIZE] = champions->prog_number; */
-  core->info_arena[(index + 3) % MEM_SIZE] = 2;
+  core->info_arena[(index + 3) % MEM_SIZE] = champions->color_gui;
+  /* core->info_arena[(index + 3) % MEM_SIZE] = 2; */
 }

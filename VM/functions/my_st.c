@@ -5,13 +5,13 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 28 18:45:40 2014 chapui_s
-** Last update Mon Mar 31 22:53:50 2014 chapui_s
+** Last update Wed Apr  2 18:05:13 2014 chapui_s
 */
 
 #include "../../op/op.h"
 #include "../machine.h"
 
-void		my_st(t_corewar *core,
+int		my_st(t_corewar *core,
 		      t_champions *champions,
 		      t_instruction *instruction)
 {
@@ -29,9 +29,10 @@ void		my_st(t_corewar *core,
   }
   else if (is_indirect(instruction->type, 2) == 1)
   {
-    printf("INDIRECT value_to_store = %d param[1] = %d\n", value_to_store, instruction->params[1]);
+    /* printf("INDIRECT value_to_store = %d param[1] = %d\n", value_to_store, instruction->params[1]); */
     index = champions->pc - 5 + (instruction->params[1] % IDX_MOD);
-    printf("INDEX = %d\n", index);
+    /* printf("INDEX = %d\n", index); */
     write_arena_four(core, champions, value_to_store, index);
   }
+  return (0);
 }

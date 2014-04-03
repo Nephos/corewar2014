@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 28 17:52:46 2014 chapui_s
-** Last update Tue Apr  1 00:03:25 2014 chapui_s
+** Last update Wed Apr  2 18:05:02 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -34,7 +34,7 @@ static int	get_first_value(t_corewar *core,
     /* if (instruction->params[0] < 0) */
     /*   instruction->params[0] = champions->pc + instruction->params[0] */
     /* 	+ MEM_SIZE; */
-    printf("ptr = %d\n", ptr);
+    /* printf("ptr = %d\n", ptr); */
     first_value = read_arena(core, ptr, 2);
   }
   else if (is_indirect(instruction->type, 1) == 1)
@@ -61,7 +61,7 @@ static int	get_second_value(t_corewar *core,
   return (second_value);
 }
 
-void		my_ldi(t_corewar *core,
+int		my_ldi(t_corewar *core,
 		       t_champions *champions,
 		       t_instruction *instruction)
 {
@@ -88,8 +88,9 @@ void		my_ldi(t_corewar *core,
     if (is_good_register(instruction->params[2]) == 1)
     {
       champions->reg[instruction->params[2]] = read_value;
-      printf("REG[%d] = %d\n", instruction->params[2], read_value);
+      /* printf("REG[%d] = %d\n", instruction->params[2], read_value); */
       champions->carry = (read_value) ? (0) : (1);
     }
   }
+  return (0);
 }
