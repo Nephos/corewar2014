@@ -5,32 +5,13 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 16:31:07 2014 chapui_s
-** Last update Thu Apr  3 02:16:33 2014 chapui_s
+** Last update Sat Apr  5 14:13:14 2014 chapui_s
 */
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_ttf.h>
 #include <unistd.h>
 #include "../machine.h"
-
-void		sdl_loop(t_gui *gui)
-{
-  int		stop;
-  SDL_Event	event;
-
-  stop = 0;
-  while (stop == 0)
-  {
-    SDL_Flip(gui->screen);
-    SDL_WaitEvent(&event);
-    if (event.type == SDL_QUIT)
-    {
-      SDL_Quit();
-      TTF_Quit();
-      stop = 1;
-    }
-  }
-}
 
 int		get_arena(t_corewar *core,
 			  int size,
@@ -45,17 +26,16 @@ int		get_arena(t_corewar *core,
   i = 0;
   j = 0;
   cycle_no_print = 0;
-
   core->screen_update = 1;
-  while (j < 1000000)
+  while (1)
   {
-    /* printf("j = %d\n", j); */
     SDL_PollEvent(&event);
     if (event.type == SDL_QUIT)
     {
+      TTF_CloseFont(gui->font);
       SDL_Quit();
       TTF_Quit();
-      break ;
+      return (0);
     }
 
     if ((manage_instructions(core, core->champions)) == 1)
@@ -91,12 +71,9 @@ int		get_arena(t_corewar *core,
      cycle_no_print += 1;
      j += 1;
   }
-  printf("nb_champions = %d\n", core->nb_champions);
-  /* TTF_CloseFont(gui->font); */
+  TTF_CloseFont(gui->font);
   SDL_Quit();
   TTF_Quit();
-  /* sdl_loop(gui); */
-//  disp_info_players(core, gui);
   return (0);
 }
 
@@ -107,9 +84,6 @@ int		put_background(t_corewar *core, t_gui *gui)
   gui->pos_background.y = 705;
   if ((gui->background = SDL_LoadBMP("Corewar.bmp")) == NULL)
     return (my_putstr("error: SDL_LoadBMP\n", 2));
-  /* if ((SDL_BlitSurface(gui->background, NULL, gui->screen, &(gui->pos_background))) < 0) */
-  /*   return (my_putstr("error: SDL_BlitSurface\n", 2)); */
-  /* SDL_Flip(gui->screen); */
   return (0);
 }
 

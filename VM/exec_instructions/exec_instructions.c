@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Tue Mar 25 15:13:41 2014 chapui_s
-** Last update Thu Apr  3 01:08:35 2014 chapui_s
+** Last update Sat Apr  5 14:07:41 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -27,10 +27,42 @@ t_functions	tab_func[] =
   {12, my_fork},
 };
 
+void	putbin(int nb)
+{
+  if (nb >= 2)
+    putbin(nb / 2);
+  my_putchar((nb % 2) + '0');
+}
+
 static int	exec_function(t_corewar *core,
 			      t_champions *champions,
 			      t_instruction *instruction)
 {
+    /* (instruction->code == 1) ? (printf("LIVE\n")) : (0); */
+    /* (instruction->code == 2) ? (printf("LD\n")) : (0); */
+    /* (instruction->code == 3) ? (printf("ST\n")) : (0); */
+    /* (instruction->code == 4) ? (printf("ADD\n")) : (0); */
+    /* (instruction->code == 5) ? (printf("SUB\n")) : (0); */
+    /* (instruction->code == 6) ? (printf("AND\n")) : (0); */
+    /* (instruction->code == 7) ? (printf("OR\n")) : (0); */
+    /* (instruction->code == 8) ? (printf("XOR\n")) : (0); */
+    /* (instruction->code == 9) ? (printf("ZJMP\n")) : (0); */
+    /* (instruction->code == 10) ? (printf("LDI\n")) : (0); */
+    /* (instruction->code == 11) ? (printf("STI\n")) : (0); */
+    /* (instruction->code == 12) ? (printf("FORK\n")) : (0); */
+    /* (instruction->code == 13) ? (printf("LDD\n")) : (0); */
+    /* (instruction->code == 14) ? (printf("LLDI\n")) : (0); */
+    /* (instruction->code == 15) ? (printf("LFORK\n")) : (0); */
+    /* (instruction->code == 16) ? (printf("AFF\n")) : (0); */
+    /* printf("TYPE = %d\n", instruction->type); */
+    /*   /\* my_putstr("TYPE: ", 1); *\/ */
+    /*   /\* putbin(instruction->type); *\/ */
+    /* printf("[1] = %d [2] = %d [3] = %d [4] = %d\n", */
+    /* 	   instruction->params[0], */
+    /* 	   instruction->params[1], */
+    /* 	   instruction->params[2], */
+    /* 	   instruction->params[3]); */
+    /* printf("PC = %d\n\n", champions->pc); */
   if (instruction->code < 13 && instruction->code > 0)
   {
     /* printf("\nOK\n"); */
@@ -163,27 +195,20 @@ int		manage_instructions(t_corewar *core, t_champions *champions)
   static unsigned int		i;
   static unsigned int	cycle_to_die_cur;
 
-  /* unsigned int	j; */
-  /* j = 0; */
-
-  /* printf("cycle_to_die_cur = %d nbr_live_cur = %d\n", */
-  /* 	 cycle_to_die_cur, core->nbr_live_cur); */
   if (i == 0)
     i = 1;
+  printf("i = %d nb_champions = %d cycle_to_die_cur = %d nbr_prog_live = %d\n",
+	 i, core->nb_champions, cycle_to_die_cur, core->nbr_live_cur);
   if (cycle_to_die_cur == 0)
     cycle_to_die_cur = CYCLE_TO_DIE;
-  /* while (j < 100000) */
-  /* { */
-  /*   printf("j = %u\n", j); */
     if (i == cycle_to_die_cur)
     {
       if ((check_live_process(core, core->champions, cycle_to_die_cur)) == 1)
       {
-	printf("someone won !\n");
-    	return (1);
+      	printf("someone won !\n");
+      	return (1);
       }
-      //check_live des process
-    	i = 1;
+      i = 1;
     }
     if (core->nbr_live_cur >= NBR_LIVE)
     {
@@ -193,12 +218,10 @@ int		manage_instructions(t_corewar *core, t_champions *champions)
     }
     exec_instructions(core, core->champions);
     i += 1;
-  /*   j += 1; */
-  /* } */
   return (0);
 }
 
-/* int		exec_instructions(t_corewar *core, t_champions *champions) */
+/* int		manage_instructions(t_corewar *core, t_champions *champions) */
 /* { */
 /*   t_instruction	instruction; */
 /*   t_champions	*tmp; */

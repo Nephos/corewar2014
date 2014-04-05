@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 16:06:34 2014 chapui_s
-** Last update Tue Mar 25 18:49:52 2014 
+** Last update Thu Apr  3 17:11:37 2014 chapui_s
 */
 
 #include <sys/types.h>
@@ -53,7 +53,7 @@ static void		init_reg(int *reg, unsigned prog_number)
 
   i = 2;
   reg[1] = (int)prog_number;
-  while (i < REG_NUMBER + 1)
+  while (i <= REG_NUMBER)
   {
     reg[i] = 0;
     i += 1;
