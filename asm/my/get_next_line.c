@@ -37,7 +37,7 @@ t_fd	*find_fd_or_create_it(t_fd **pile_fd, int fd)
     tmp->next = new;
   }
   else
-    new->next = new;;
+    new->next = new;
   return (new);
 }
 
@@ -69,9 +69,9 @@ int	add_str_to(char **dest, char *src)
   src[BUF_SIZE] = '\0';
   while (*dest && (*dest)[i])
     i = i + 1;
-  while (src[j++]);
-  i = i + j;
-  if ((tmp = (char*)malloc(sizeof(char) * (i + 1))) == NULL)
+  while (src[j++])
+    ;
+  if ((tmp = (char*)malloc(sizeof(char) * (i + j + 1))) == NULL)
     return (1);
   i = 0;
   while (*dest && (*dest)[i])
