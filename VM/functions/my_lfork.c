@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Wed Apr  2 16:38:53 2014 chapui_s
-** Last update Tue Apr  8 17:52:33 2014 chapui_s
+** Last update Tue Apr  8 17:50:15 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -30,7 +30,7 @@ static int	*copy_reg(int *father)
   return (new);
 }
 
-int		my_fork(t_corewar *core,
+int		my_lfork(t_corewar *core,
 			t_champions *champions,
 			t_instruction *instruction)
 {
@@ -40,7 +40,7 @@ int		my_fork(t_corewar *core,
   (void)core;
   if (instruction->params[0] == 0)
     instruction->params[0] = 3;
-  new_pc = (champions->pc - 3) + (instruction->params[0] % IDX_MOD);
+  new_pc = (champions->pc - 3) + (instruction->params[0]);
   while (new_pc < 0)
     new_pc += MEM_SIZE;
   new_pc = new_pc % MEM_SIZE;

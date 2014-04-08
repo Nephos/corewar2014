@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 18:49:25 2014 chapui_s
-** Last update Tue Apr  8 16:38:09 2014 chapui_s
+** Last update Tue Apr  8 17:20:26 2014 chapui_s
 */
 
 #include <SDL/SDL.h>
@@ -51,11 +51,10 @@ void		get_color_champions(t_gui *gui,
 }
 
 static int	is_pc(t_corewar *core,
-		      t_champions *champions,
 		      t_gui *gui,
 		      int i)
 {
-  int		cur;
+  unsigned int	cur;
   int		*list;
 
   cur = 0;
@@ -83,7 +82,7 @@ static int	set_color_with_pc(t_gui *gui,
   fg_color.g = 0;
   fg_color.b = 0;
   fg_color.unused = 0;
-  if (is_pc(core, core->champions, gui, i) != 0)
+  if (is_pc(core, gui, i) != 0)
     gui->byte_arena = TTF_RenderText_Shaded(gui->font,
 					    hex_to_str(core->arena[i], &str[0]),
 					    fg_color,

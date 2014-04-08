@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 31 19:37:23 2014 chapui_s
-** Last update Sun Apr  6 17:58:45 2014 chapui_s
+** Last update Tue Apr  8 17:45:38 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -20,7 +20,7 @@ int		my_zjmp(t_corewar *core,
   (void)core;
   if (champions->carry == 1)
   {
-    where_to_go = champions->pc - 3 + (instruction->params[0] % IDX_MOD);
+    where_to_go = (champions->pc - 3) + (instruction->params[0] % IDX_MOD);
     where_to_go = where_to_go % MEM_SIZE;
     while (where_to_go < 0)
       where_to_go += MEM_SIZE;

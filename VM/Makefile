@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Sat Apr  5 16:31:13 2014 chapui_s
+## Last update Tue Apr  8 17:47:53 2014 chapui_s
 ##
 
 NAME		= corewar
@@ -45,6 +45,7 @@ SRC		= main.c \
 		  $(FUNC_DIR)/my_live.c \
 		  $(FUNC_DIR)/is_type.c \
 		  $(FUNC_DIR)/my_ld.c \
+		  $(FUNC_DIR)/my_lld.c \
 		  $(FUNC_DIR)/my_st.c \
 		  $(FUNC_DIR)/my_add.c \
 		  $(FUNC_DIR)/my_sub.c \
@@ -52,9 +53,11 @@ SRC		= main.c \
 		  $(FUNC_DIR)/my_or.c \
 		  $(FUNC_DIR)/my_xor.c \
 		  $(FUNC_DIR)/my_ldi.c \
+		  $(FUNC_DIR)/my_lldi.c \
 		  $(FUNC_DIR)/my_sti.c \
 		  $(FUNC_DIR)/my_zjmp.c \
 		  $(FUNC_DIR)/my_fork.c \
+		  $(FUNC_DIR)/my_lfork.c \
 		  $(FUNC_DIR)/is_good_register.c \
 		  ../op/op.c
 

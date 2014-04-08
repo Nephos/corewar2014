@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 16:31:07 2014 chapui_s
-** Last update Tue Apr  8 16:29:17 2014 chapui_s
+** Last update Tue Apr  8 17:43:43 2014 chapui_s
 */
 
 #include <SDL/SDL.h>
@@ -57,13 +57,8 @@ int		get_arena(t_corewar *core,
 
     if ((manage_instructions(core)) == 1)
       return (0);
-    if (j % 20 == 0)
+    if (j % 5 == 0)
     {
-    /* if (j > 25000) */
-    /* { */
-//      search_42(core);
-      /* if (core->screen_update != 0 || cycle_no_print > 5) */
-      /* { */
     	SDL_FillRect(gui->screen, NULL, 0);
     	i = 0;
 
@@ -89,7 +84,6 @@ int		get_arena(t_corewar *core,
     	  i += 1;
     	}
     	SDL_Flip(gui->screen);
-	// }
     }
     core->screen_update = 0;
     j += 1;

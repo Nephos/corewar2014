@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Tue Apr  8 16:30:26 2014 chapui_s
+** Last update Tue Apr  8 17:47:30 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -45,6 +45,7 @@ typedef struct		s_corewar
   unsigned int		nb_champions;
   t_champions		*champions;
   t_champions		*last_champions;
+  int			prog_number_max;
   int			nbr_cycle_dump;
   int			nbr_live_cur;
   int			screen_update;
@@ -139,6 +140,9 @@ int			my_live(t_corewar *core,
 int			my_ld(t_corewar *core,
 				t_champions *champions,
 				t_instruction *instruction);
+int			my_lld(t_corewar *core,
+				t_champions *champions,
+				t_instruction *instruction);
 int			my_st(t_corewar *core,
 			      t_champions *champions,
 			      t_instruction *instruction);
@@ -160,6 +164,9 @@ int			my_xor(t_corewar *core,
 int			my_ldi(t_corewar *core,
 			       t_champions *champions,
 			       t_instruction *instruction);
+int			my_lldi(t_corewar *core,
+			       t_champions *champions,
+			       t_instruction *instruction);
 int			my_sti(t_corewar *core,
 			       t_champions *champions,
 			       t_instruction *instruction);
@@ -167,6 +174,9 @@ int			my_zjmp(t_corewar *core,
 				t_champions *champions,
 				t_instruction *instruction);
 int			my_fork(t_corewar *core,
+				t_champions *champions,
+				t_instruction *instruction);
+int			my_lfork(t_corewar *core,
 				t_champions *champions,
 				t_instruction *instruction);
 int			read_arena(t_corewar *core, int index, int n_to_read);
