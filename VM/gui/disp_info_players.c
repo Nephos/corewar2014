@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Tue Mar 25 00:20:38 2014 chapui_s
-** Last update Tue Mar 25 00:20:50 2014 chapui_s
+** Last update Sat Apr  5 19:37:48 2014 chapui_s
 */
 
 #include <SDL/SDL.h>
@@ -13,23 +13,65 @@
 #include <unistd.h>
 #include "../machine.h"
 
-void		disp_info_players(t_corewar *core, t_gui *gui)
+int		disp_players(t_gui *gui)
 {
   SDL_Rect	position;
+  int		i;
 
-  position.x = 10;
-  position.y = 750;
+  i = 0;
+  position.x = 100;
+  position.y = 730;
+  while (gui->players[i])
+  {
+    if (SDL_BlitSurface(gui->players[i], NULL, gui->screen, &position) < 0)
+      return (my_putstr("error :SDL_BlitSurface\n", 2));
+    position.y += 15;
+    i += 1;
+  }
+  return (0);
+}
+
+int		disp_info_players(t_corewar *core, t_gui *gui, int cycles)
+{
+  SDL_Rect	position;
+  char		str[50];
+
   gui->my_color.r = 255;
   gui->my_color.g = 255;
   gui->my_color.b = 255;
-  if ((gui->font = TTF_OpenFont("arial.ttf", 15)) == NULL)
-    return (my_putstr("error: TTF_OpenFont\n", 2));
-  gui->byte_arena = TTF_RenderText_Solid(gui->font,
-					 "coucou",
+  gui->byte_arena = TTF_RenderText_Solid(gui->font_info,
+					 "PLAYING",
 					 gui->my_color);
-  gui->byte_arena->w = my_strlen("coucou") * 8;
-  gui->byte_arena->h = 14;
+  position.x = (WIN_X / 2) - (gui->byte_arena->w / 2);
+  position.y = 710;
   if ((SDL_BlitSurface(gui->byte_arena, NULL, gui->screen, &position)) < 0)
     return (my_putstr("error :SDL_BlitSurface\n", 2));
-  TTF_CloseFont(gui->font);
+
+  gui->byte_arena = TTF_RenderText_Solid(gui->font_info,
+					 int_to_str(core->nb_champions, &(str[0])),
+					 gui->my_color);
+  position.x = (WIN_X - 70);
+  position.y = 725;
+  if ((SDL_BlitSurface(gui->byte_arena, NULL, gui->screen, &position)) < 0)
+    return (my_putstr("error :SDL_BlitSurface\n", 2));
+
+  gui->byte_arena = TTF_RenderText_Solid(gui->font_info,
+					 int_to_str(cycles, &(str[0])),
+					 gui->my_color);
+  position.x = (WIN_X - 70);
+  position.y = 745;
+  if ((SDL_BlitSurface(gui->byte_arena, NULL, gui->screen, &position)) < 0)
+    return (my_putstr("error :SDL_BlitSurface\n", 2));
+
+  gui->byte_arena = TTF_RenderText_Solid(gui->font_info,
+					 int_to_str(core->cycle_to_die_cur, &(str[0])),
+					 gui->my_color);
+  position.x = (WIN_X - 70);
+  position.y = 765;
+  if ((SDL_BlitSurface(gui->byte_arena, NULL, gui->screen, &position)) < 0)
+    return (my_putstr("error :SDL_BlitSurface\n", 2));
+
+  disp_players(gui);
+
+  return (0);
 }

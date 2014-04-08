@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Wed Apr  2 21:26:07 2014 chapui_s
+## Last update Sat Apr  5 16:31:13 2014 chapui_s
 ##
 
 NAME		= corewar
@@ -28,6 +28,7 @@ SRC		= main.c \
 	  	  $(UTIL_DIR)/my_strcmp.c \
 	  	  $(UTIL_DIR)/my_puts.c \
 	  	  $(UTIL_DIR)/read_write_arena.c \
+	  	  $(UTIL_DIR)/int_to_str.c \
 	  	  $(UTIL_DIR)/my_atoi.c \
 	  	  $(UTIL_DIR)/my_showmem.c \
 	  	  $(UTIL_DIR)/attribute_prog_number.c \
@@ -38,6 +39,7 @@ SRC		= main.c \
 		  $(GUI_DIR)/my_gui.c \
 		  $(GUI_DIR)/hex_to_str.c \
 		  $(GUI_DIR)/get_color.c \
+		  $(GUI_DIR)/disp_info_players.c \
 		  $(EXEC_DIR)/exec_instructions.c \
 		  $(EXEC_DIR)/get_instruction.c \
 		  $(FUNC_DIR)/my_live.c \

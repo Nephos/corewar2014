@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Thu Apr  3 02:07:06 2014 chapui_s
+** Last update Tue Apr  8 16:30:26 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -30,7 +30,7 @@ typedef struct		s_champions
   char			*comment;
   unsigned int		is_dead;
   int			*reg;
-  unsigned int		pc;
+  int			pc;
   unsigned int		carry;
   unsigned int		last_live;
   int			cycle_to_wait;
@@ -56,7 +56,10 @@ typedef struct		s_gui
   SDL_Surface		*screen;
   SDL_Surface		*byte_arena;
   SDL_Surface		*background;
+  SDL_Surface		*players[5];
   TTF_Font		*font;
+  TTF_Font		*font_info;
+  int			*list_pc;
   SDL_Rect		pos_background;
   SDL_Color		my_color;
 }			t_gui;
@@ -88,6 +91,7 @@ typedef struct		s_functions
 # define AFF		(16)
 # define WIN_X		(1345)
 # define WIN_Y		(800)
+# define MAX_PC		(15000)
 /* # define WIN_Y		(710) */
 
 int			usage(void);
@@ -174,7 +178,10 @@ int			is_direct(int octet_type, int num_param);
 int			is_indirect(int octet_type, int num_param);
 int			is_register(unsigned char octet_type, int num_param);
 int			is_good_register(int nb);
-int			manage_instructions(t_corewar *core,
-					    t_champions *champions);
+int			manage_instructions(t_corewar *core);
+int			disp_info_players(t_corewar *core, t_gui *gui, int cycles);
+char			*int_to_str(int nb, char *s);
+void			get_color_champions(t_gui *gui, unsigned char c);
+void			get_list_pc(t_corewar *core, t_gui *gui);
 
 #endif /* !MACHINE_H_ */

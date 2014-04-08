@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Wed Apr  2 16:38:53 2014 chapui_s
-** Last update Thu Apr  3 13:56:20 2014 chapui_s
+** Last update Tue Apr  8 14:57:42 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -63,8 +63,8 @@ int		my_fork(t_corewar *core,
   tmp->is_dead = 0;
   tmp->prog_number = find_next_prog_number(core->champions);
   tmp->carry = champions->carry;
-  tmp->last_live = champions->last_live;
-  /* tmp->last_live = 0; */
+  /* tmp->last_live = champions->last_live; */
+  tmp->last_live = 0;
   tmp->cycle_to_wait = 0;
   tmp->color_gui = champions->color_gui;
   tmp->pc = new_pc;

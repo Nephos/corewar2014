@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 16:29:06 2014 chapui_s
-** Last update Wed Apr  2 23:00:04 2014 chapui_s
+** Last update Sat Apr  5 19:37:18 2014 chapui_s
 */
 
 #include "machine.h"
@@ -63,7 +63,7 @@ int			save_champion(int i, char **argv, t_corewar *core)
   return (0);
 }
 
-void		save_args(int argc, char **argv, t_corewar *core)
+int		save_args(int argc, char **argv, t_corewar *core)
 {
   int		i;
   unsigned int	nb_cor;
@@ -73,10 +73,12 @@ void		save_args(int argc, char **argv, t_corewar *core)
   while (i < argc)
   {
     if (is_file_dot_cor(argv[i]) == 1 && ++nb_cor)
-      save_champion(i, argv, core);
+      if ((save_champion(i, argv, core)) == -1)
+	return (-1);
     i += 1;
   }
   core->nb_champions = nb_cor;
+  return (0);
 }
 
 int		get_args(int argc, char **argv, t_corewar *core)
@@ -84,7 +86,8 @@ int		get_args(int argc, char **argv, t_corewar *core)
   (void)core;
   if (is_error_in_args(argc, argv) == -1)
     return (usage());
-  save_args(argc, argv, core);
+  if ((save_args(argc, argv, core)) == -1)
+    return (-1);
   if ((attribute_prog_number(core->champions,
 			     core->nb_champions)) == -1)
     return (-1);

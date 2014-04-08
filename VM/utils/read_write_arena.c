@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 28 18:57:53 2014 chapui_s
-** Last update Thu Apr  3 13:57:50 2014 chapui_s
+** Last update Sun Apr  6 16:41:52 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -67,6 +67,8 @@ int		read_arena(t_corewar *core, int index, int n_to_read)
 
   i = 0;
   value = 0;
+  while (index < 0)
+    index += MEM_SIZE;
   while (i < n_to_read)
   {
     value = value << 8;

@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Tue Mar 25 15:28:46 2014 chapui_s
-** Last update Thu Apr  3 00:38:12 2014 chapui_s
+** Last update Sun Apr  6 12:43:56 2014 chapui_s
 */
 
 #include "../machine.h"
@@ -94,6 +94,9 @@ void		get_instruction(t_corewar *core,
 				t_champions *champions,
 				t_instruction *instruction)
 {
+  while (champions->pc < 0)
+    champions->pc += MEM_SIZE;
+  champions->pc = champions->pc % MEM_SIZE;
   instruction->code = core->arena[champions->pc];
   if (instruction->code >= 1 && instruction->code <= 16)
   {

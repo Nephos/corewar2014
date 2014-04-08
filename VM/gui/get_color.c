@@ -5,19 +5,37 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 18:49:25 2014 chapui_s
-** Last update Sat Apr  5 13:44:13 2014 chapui_s
+** Last update Tue Apr  8 16:38:09 2014 chapui_s
 */
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_ttf.h>
 #include "../machine.h"
 
-static inline void	get_color_champions(t_gui *gui,
-					    unsigned char c)
+void		get_list_pc(t_corewar *core, t_gui *gui)
+{
+  t_champions	*tmp;
+  int		i;
+
+  tmp = core->champions;
+  i = 0;
+  while (tmp && i < (MAX_PC * 2) - 1)
+  {
+    gui->list_pc[i] = tmp->pc;
+    gui->list_pc[i + 1] = tmp->color_gui;
+    i += 2;
+    tmp = tmp->next;
+  }
+}
+
+void		get_color_champions(t_gui *gui,
+				    unsigned char c)
 {
   gui->my_color.r = 30;
   gui->my_color.g = 30;
   gui->my_color.b = 30;
+  if (c == 0 || c > 4)
+    return ;
   (c == 1) ? (gui->my_color.r = 0) : (0);
   (c == 1) ? (gui->my_color.g = 255) : (0);
   (c == 1) ? (gui->my_color.b = 0) : (0);
@@ -32,16 +50,24 @@ static inline void	get_color_champions(t_gui *gui,
   (c == 4) ? (gui->my_color.b = 66) : (0);
 }
 
-static int	is_pc(t_champions *champions, t_gui *gui, int i)
+static int	is_pc(t_corewar *core,
+		      t_champions *champions,
+		      t_gui *gui,
+		      int i)
 {
-  while (champions)
+  int		cur;
+  int		*list;
+
+  cur = 0;
+  list = gui->list_pc;
+  while (cur < core->nb_champions && cur < (MAX_PC * 2) - 1)
   {
-    if (champions->pc == (unsigned int)i)
+    if (list[cur] == i)
     {
-      get_color_champions(gui, champions->color_gui);
+      get_color_champions(gui, list[cur + 1]);
       return (1);
     }
-    champions = champions->next;
+    cur += 2;
   }
   return (0);
 }
@@ -57,7 +83,7 @@ static int	set_color_with_pc(t_gui *gui,
   fg_color.g = 0;
   fg_color.b = 0;
   fg_color.unused = 0;
-  if (is_pc(core->champions, gui, i) != 0)
+  if (is_pc(core, core->champions, gui, i) != 0)
     gui->byte_arena = TTF_RenderText_Shaded(gui->font,
 					    hex_to_str(core->arena[i], &str[0]),
 					    fg_color,
@@ -78,7 +104,5 @@ int		get_color(t_gui *gui,
   get_color_champions(gui, core->info_arena[i]);
   if ((set_color_with_pc(gui, core, i)) == -1)
     return (-1);
-  gui->byte_arena->w = 12;
-  gui->byte_arena->h = 11;
   return (0);
 }
