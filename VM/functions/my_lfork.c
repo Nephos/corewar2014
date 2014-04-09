@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Wed Apr  2 16:38:53 2014 chapui_s
-** Last update Wed Apr  9 16:21:53 2014 chapui_s
+** Last update Thu Apr 10 01:50:26 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -37,9 +37,7 @@ int		my_lfork(t_corewar *core,
   int		new_pc;
   t_champions	*tmp;
 
-  (void)core;
-  if (instruction->params[0] == 0)
-    instruction->params[0] = 3;
+  (instruction->params[0] == 0) ? (instruction->params[0] = 3) : (0);
   new_pc = (champions->pc - 3) + (instruction->params[0]);
   while (new_pc < 0)
     new_pc += MEM_SIZE;
@@ -52,7 +50,6 @@ int		my_lfork(t_corewar *core,
   tmp->comment = champions->comment;
   tmp->prog_number = ++(core->prog_number_max);
   tmp->carry = champions->carry;
-  /* tmp->last_live = champions->last_live; */
   tmp->last_live = 0;
   tmp->cycle_to_wait = 2;
   tmp->color_gui = champions->color_gui;

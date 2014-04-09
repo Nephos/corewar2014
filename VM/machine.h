@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Thu Apr 10 00:10:50 2014 chapui_s
+** Last update Thu Apr 10 01:24:43 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -48,7 +48,6 @@ typedef struct		s_corewar
   int			prog_number_max;
   int			nbr_cycle_dump;
   int			nbr_live_cur;
-  int			screen_update;
   int			cycle_to_die_cur;
 }			t_corewar;
 
@@ -120,8 +119,7 @@ int			load_champions_in_arena(unsigned char *arena,
 						t_corewar *core);
 
 int			my_showmem(unsigned char *str, int size);
-int			my_gui(t_corewar *core,
-			       int size);
+int			my_gui(t_corewar *core);
 char			*hex_to_str(unsigned char c, char *str);
 int			get_color(t_gui *gui,
 				  t_corewar *core,
@@ -192,7 +190,7 @@ int			is_indirect(int octet_type, int num_param);
 int			is_register(unsigned char octet_type, int num_param);
 int			is_good_register(int nb);
 int			manage_instructions(t_corewar *core);
-int			disp_info_players(t_corewar *core, t_gui *gui, int cycles);
+int			disp_info_players(t_corewar *core, t_gui *gui, int cycles, int pause);
 char			*int_to_str(int nb, char *s);
 void			get_color_champions(t_gui *gui, unsigned char c);
 void			get_list_pc(t_corewar *core, t_gui *gui);
@@ -214,5 +212,6 @@ void			attribute_three_def(t_champions *champions);
 int			check_place_arena(unsigned char *info_arena,
 					  unsigned int prog_number,
 					  unsigned int *i);
-
+int			load_players_name(t_corewar *core, t_gui *gui);
+int			manage_event(t_gui *gui, int *pause);
 #endif /* !MACHINE_H_ */

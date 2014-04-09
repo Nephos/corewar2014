@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Thu Apr 10 00:09:37 2014 chapui_s
+## Last update Thu Apr 10 00:57:57 2014 chapui_s
 ##
 
 NAME		= corewar
@@ -44,8 +44,10 @@ SRC		= main.c \
 	  	  $(UTIL_DIR)/attribute_one_two_three_addr.c \
 	  	  $(UTIL_DIR)/get_info_champions.c \
 		  $(GUI_DIR)/my_gui.c \
+		  $(GUI_DIR)/events.c \
 		  $(GUI_DIR)/hex_to_str.c \
 		  $(GUI_DIR)/get_color.c \
+		  $(GUI_DIR)/load_players_name.c \
 		  $(GUI_DIR)/disp_info_players.c \
 		  $(EXEC_DIR)/exec_instructions.c \
 		  $(EXEC_DIR)/get_instruction.c \
