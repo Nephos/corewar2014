@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Tue Mar 25 15:13:41 2014 chapui_s
-** Last update Tue Apr  8 17:48:32 2014 chapui_s
+** Last update Wed Apr  9 16:55:32 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -28,6 +28,7 @@ t_functions	tab_func[] =
   {13, my_lld},
   {14, my_lldi},
   {15, my_lfork},
+  {16, my_aff},
 };
 
 void	putbin(int nb)
@@ -67,7 +68,7 @@ static int	exec_function(t_corewar *core,
   /*   	   instruction->params[2], */
   /*   	   instruction->params[3]); */
   /*   printf("PC = %d\n\n", champions->pc); */
-  if (instruction->code < 13 && instruction->code > 0)
+  if (instruction->code < 17 && instruction->code > 0)
   {
     /* printf("\nOK\n"); */
     if ((tab_func[instruction->code - 1].function(core,

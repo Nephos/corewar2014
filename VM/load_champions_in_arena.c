@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 16:06:34 2014 chapui_s
-** Last update Tue Apr  8 17:35:30 2014 chapui_s
+** Last update Thu Apr 10 00:11:37 2014 chapui_s
 */
 
 #include <sys/types.h>
@@ -24,24 +24,23 @@ static int		load_file_in_arena(unsigned char *arena,
   int			s_read;
   char			buf;
   unsigned int		i;
+  int			size;
 
   while (champions)
   {
+    size = 0;
     i = champions->load_address;
-    if ((fd = open(champions->filename, O_RDONLY)) == -1)
-      return (my_putstr("error: could not open file\n", 2));
-    if (get_name_comment_champions(champions, fd) == -1)
+    if (get_name_comment_champions(champions, &fd) == -1)
       return (-1);
-    if ((lseek(fd, sizeof(struct header_s), SEEK_SET)) == -1)
-      return (my_putstr("error: lseek\n", 2));
-    while ((s_read = read(fd, &buf, 1)) > 0)
+    while ((s_read = read(fd, &buf, 1)) > 0 && ++size)
     {
       arena[i] = buf;
-      info_arena[i] = champions->prog_number;
-      i += 1;
+      if (check_place_arena(info_arena, champions->prog_number, &i) == -1)
+	return (-1);
       (i == MEM_SIZE - 1) ? (i = 0) : (0);
     }
-    close(fd);
+    if ((check_size_read(size, champions, fd, s_read)) == -1)
+      return (-1);
     champions = champions->next;
   }
   return (0);
@@ -68,10 +67,10 @@ static int		init_values_champions(t_champions *champions)
 	== NULL)
       return (my_putstr(ALLOC_FAILED, 2));
     init_reg(champions->reg, champions->prog_number);
-    champions->is_dead = 0;
     champions->pc = champions->load_address;
     champions->carry = 0;
     champions->last_live = 0;
+    champions->size = 0;
     champions->cycle_to_wait = 0;
     champions = champions->next;
   }

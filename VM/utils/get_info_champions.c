@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 16:06:34 2014 chapui_s
-** Last update Fri Mar 28 13:04:20 2014 chapui_s
+** Last update Thu Apr 10 00:00:59 2014 chapui_s
 */
 
 #include <sys/types.h>
@@ -72,15 +72,25 @@ static int	get_comment(t_champions *champions, int fd)
   return (0);
 }
 
-int		get_name_comment_champions(t_champions *champions, int fd)
+int		get_name_comment_champions(t_champions *champions, int *fd)
 {
-  if ((lseek(fd, sizeof(int), SEEK_SET)) == -1)
-    return (my_putstr("error: lseek\n", 2));
-  if ((get_name(champions, fd)) == -1)
+  if ((*fd = open(champions->filename, O_RDONLY)) == -1)
+    return (my_putstr("error: read\n", 2));
+  if (get_magic(champions, *fd) == -1)
     return (-1);
-  if ((lseek(fd, (sizeof(int) * 2) + PROG_NAME_LENGTH + 4, SEEK_SET)) == -1)
+  if ((lseek(*fd, sizeof(int), SEEK_SET)) == -1)
     return (my_putstr("error: lseek\n", 2));
-  if ((get_comment(champions, fd)) == -1)
+  if ((get_name(champions, *fd)) == -1)
     return (-1);
+  if ((lseek(*fd, (sizeof(int) + (PROG_NAME_LENGTH + 4)), SEEK_SET)) == -1)
+    return (my_putstr("error: lseek\n", 2));
+  if (get_size(champions, *fd) == -1)
+    return (-1);
+  if ((lseek(*fd, (sizeof(int) * 2) + PROG_NAME_LENGTH + 4, SEEK_SET)) == -1)
+    return (my_putstr("error: lseek\n", 2));
+  if ((get_comment(champions, *fd)) == -1)
+    return (-1);
+  if ((lseek(*fd, sizeof(struct header_s), SEEK_SET)) == -1)
+      return (my_putstr("error: lseek\n", 2));
   return (0);
 }

@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 14:45:46 2014 chapui_s
-** Last update Thu Apr  3 00:06:00 2014 chapui_s
+** Last update Thu Apr 10 00:12:02 2014 chapui_s
 */
 
 #include <stdlib.h>
@@ -26,21 +26,20 @@ void		disp_args(t_corewar *core)
     i = 1;
     printf("filename = %s\n", tmp->filename);
     printf("prog_number = %d\n", tmp->prog_number);
-    /* printf("load_address = %d\n", tmp->load_address); */
-    /* printf("is_dead = %d\n", tmp->is_dead); */
+    printf("load_address = %d\n", tmp->load_address);
     printf("pc = %d\n", tmp->pc);
-    /* printf("carry = %d\n", tmp->carry); */
-    /* printf("last_live = %d\n", tmp->last_live); */
-    /* printf("cycle_to_wait = %d\n", tmp->cycle_to_wait); */
-    /* printf("name = %s\n", tmp->name); */
-    /* printf("comment = %s\n", tmp->comment); */
-    /* printf("color = %d\n", tmp->color_gui); */
-    /* while (i < REG_NUMBER + 1) */
-    /* { */
-    /*   printf("reg[%d] = %d\n", i, tmp->reg[i]); */
-    /*   i += 1; */
-    /* } */
-    /* printf("\n"); */
+    printf("carry = %d\n", tmp->carry);
+    printf("last_live = %d\n", tmp->last_live);
+    printf("cycle_to_wait = %d\n", tmp->cycle_to_wait);
+    printf("name = %s\n", tmp->name);
+    printf("comment = %s\n", tmp->comment);
+    printf("color = %d\n", tmp->color_gui);
+    while (i < REG_NUMBER + 1)
+    {
+      printf("reg[%d] = %d\n", i, tmp->reg[i]);
+      i += 1;
+    }
+    printf("\n");
     tmp = tmp->next;
     i += 1;
   }

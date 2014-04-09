@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Tue Apr  8 17:47:30 2014 chapui_s
+** Last update Thu Apr 10 00:10:50 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -24,11 +24,11 @@ typedef struct		s_instruction
 typedef struct		s_champions
 {
   char			*filename;
+  int			size;
   unsigned int		prog_number;
   unsigned int		load_address;
   char			*name;
   char			*comment;
-  unsigned int		is_dead;
   int			*reg;
   int			pc;
   unsigned int		carry;
@@ -127,7 +127,7 @@ int			get_color(t_gui *gui,
 				  t_corewar *core,
 				  int i);
 int			get_name_comment_champions(t_champions *champions,
-						   int fd);
+						   int *fd);
 int			my_strlen(char *s);
 void			get_instruction(t_corewar *core,
 					t_champions *champions,
@@ -179,6 +179,9 @@ int			my_fork(t_corewar *core,
 int			my_lfork(t_corewar *core,
 				t_champions *champions,
 				t_instruction *instruction);
+int			my_aff(t_corewar *core,
+			       t_champions *champions,
+			       t_instruction *instruction);
 int			read_arena(t_corewar *core, int index, int n_to_read);
 void			write_arena_four(t_corewar *core,
 					 t_champions *champions,
@@ -193,5 +196,23 @@ int			disp_info_players(t_corewar *core, t_gui *gui, int cycles);
 char			*int_to_str(int nb, char *s);
 void			get_color_champions(t_gui *gui, unsigned char c);
 void			get_list_pc(t_corewar *core, t_gui *gui);
+int			get_magic(t_champions *champions, int fd);
+int			little_to_big_endian(int nb);
+int			get_size(t_champions *champions, int fd);
+int			check_size_read(int size,
+					t_champions *champions,
+					int fd,
+					int s_read);
+void			swap_int(int *a, int *b);
+void			sort_int(int *tab, int size);
+void			attribute_one_def(t_champions *champions,
+					  int place_after);
+void			attribute_two_def(t_champions *champions,
+					  int pa,
+					  int nb);
+void			attribute_three_def(t_champions *champions);
+int			check_place_arena(unsigned char *info_arena,
+					  unsigned int prog_number,
+					  unsigned int *i);
 
 #endif /* !MACHINE_H_ */

@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Wed Apr  2 16:38:53 2014 chapui_s
-** Last update Tue Apr  8 17:50:15 2014 chapui_s
+** Last update Wed Apr  9 16:21:53 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -50,7 +50,6 @@ int		my_lfork(t_corewar *core,
   tmp = core->last_champions;
   tmp->name = champions->name;
   tmp->comment = champions->comment;
-  tmp->is_dead = 0;
   tmp->prog_number = ++(core->prog_number_max);
   tmp->carry = champions->carry;
   /* tmp->last_live = champions->last_live; */

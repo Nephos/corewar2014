@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Tue Apr  8 17:47:53 2014 chapui_s
+## Last update Thu Apr 10 00:09:37 2014 chapui_s
 ##
 
 NAME		= corewar
@@ -28,13 +28,20 @@ SRC		= main.c \
 	  	  $(UTIL_DIR)/my_strcmp.c \
 	  	  $(UTIL_DIR)/my_puts.c \
 	  	  $(UTIL_DIR)/read_write_arena.c \
+	  	  $(UTIL_DIR)/get_magic.c \
 	  	  $(UTIL_DIR)/int_to_str.c \
 	  	  $(UTIL_DIR)/my_atoi.c \
+	  	  $(UTIL_DIR)/convert_endian.c \
 	  	  $(UTIL_DIR)/my_showmem.c \
 	  	  $(UTIL_DIR)/attribute_prog_number.c \
 	  	  $(UTIL_DIR)/attribute_address.c \
 	  	  $(UTIL_DIR)/my_strlen.c \
+	  	  $(UTIL_DIR)/swap_int.c \
+	  	  $(UTIL_DIR)/check_place_arena.c \
+	  	  $(UTIL_DIR)/get_size.c \
+	  	  $(UTIL_DIR)/sort_int.c \
 	  	  $(UTIL_DIR)/check_args.c \
+	  	  $(UTIL_DIR)/attribute_one_two_three_addr.c \
 	  	  $(UTIL_DIR)/get_info_champions.c \
 		  $(GUI_DIR)/my_gui.c \
 		  $(GUI_DIR)/hex_to_str.c \
@@ -58,6 +65,7 @@ SRC		= main.c \
 		  $(FUNC_DIR)/my_zjmp.c \
 		  $(FUNC_DIR)/my_fork.c \
 		  $(FUNC_DIR)/my_lfork.c \
+		  $(FUNC_DIR)/my_aff.c \
 		  $(FUNC_DIR)/is_good_register.c \
 		  ../op/op.c
 

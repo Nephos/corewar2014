@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 16:31:07 2014 chapui_s
-** Last update Tue Apr  8 17:43:43 2014 chapui_s
+** Last update Wed Apr  9 23:45:19 2014 chapui_s
 */
 
 #include <SDL/SDL.h>
@@ -85,6 +85,7 @@ int		get_arena(t_corewar *core,
     	}
     	SDL_Flip(gui->screen);
     }
+    sleep(60);
     core->screen_update = 0;
     j += 1;
   }
@@ -97,9 +98,11 @@ int		get_arena(t_corewar *core,
 int		put_background(t_corewar *core, t_gui *gui)
 {
   t_champions	*tmp;
+  unsigned int	cur;
   int		i;
 
   i = 0;
+  cur = 1;
   gui->pos_background.x = 0;
   gui->pos_background.y = 705;
   if ((gui->background = SDL_LoadBMP("Corewar.bmp")) == NULL)
@@ -109,13 +112,19 @@ int		put_background(t_corewar *core, t_gui *gui)
   tmp = core->champions;
   while (tmp)
   {
-    get_color_champions(gui, tmp->color_gui);
-    if ((gui->players[i] = TTF_RenderText_Solid(gui->font_info,
-				      tmp->name,
-						gui->my_color)) == NULL)
-      return (my_putstr("error: TTF_RenderText\n", 2));
-    i += 1;
-    tmp = tmp->next;
+    if (tmp->prog_number == cur)
+    {
+      get_color_champions(gui, tmp->color_gui);
+      if ((gui->players[i] = TTF_RenderText_Solid(gui->font_info,
+						  tmp->name,
+						  gui->my_color)) == NULL)
+	return (my_putstr("error: TTF_RenderText\n", 2));
+      i += 1;
+      cur += 1;
+      tmp = core->champions;
+    }
+    else
+      tmp = tmp->next;
   }
   gui->players[i] = NULL;
   return (0);

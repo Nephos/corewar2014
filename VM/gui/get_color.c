@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 18:49:25 2014 chapui_s
-** Last update Tue Apr  8 17:20:26 2014 chapui_s
+** Last update Wed Apr  9 23:44:44 2014 chapui_s
 */
 
 #include <SDL/SDL.h>
@@ -55,17 +55,20 @@ static int	is_pc(t_corewar *core,
 		      int i)
 {
   unsigned int	cur;
+  unsigned int	j;
   int		*list;
 
   cur = 0;
+  j = 0;
   list = gui->list_pc;
-  while (cur < core->nb_champions && cur < (MAX_PC * 2) - 1)
+  while (j < core->nb_champions && cur < (MAX_PC * 2) - 1)
   {
     if (list[cur] == i)
     {
       get_color_champions(gui, list[cur + 1]);
       return (1);
     }
+    j += 1;
     cur += 2;
   }
   return (0);

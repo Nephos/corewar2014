@@ -5,9 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 16:29:06 2014 chapui_s
-** Last update Sat Apr  5 19:37:18 2014 chapui_s
+** Last update Wed Apr  9 23:47:58 2014 chapui_s
 */
 
+#include "../op/op.h"
 #include "machine.h"
 
 int		is_error_in_args(int argc, char **argv)
@@ -52,7 +53,7 @@ int			save_champion(int i, char **argv, t_corewar *core)
     if (!(my_strcmp(argv[i], "-n")))
       prog_number = my_unsigned_atoi(argv[i + 1]);
     if (!(my_strcmp(argv[i], "-a")))
-      load_address = my_unsigned_atoi(argv[i + 1]);
+      load_address = (my_unsigned_atoi(argv[i + 1]) % MEM_SIZE);
     i -= 1;
   }
   if ((push_champion(core,
@@ -83,7 +84,6 @@ int		save_args(int argc, char **argv, t_corewar *core)
 
 int		get_args(int argc, char **argv, t_corewar *core)
 {
-  (void)core;
   if (is_error_in_args(argc, argv) == -1)
     return (usage());
   if ((save_args(argc, argv, core)) == -1)
