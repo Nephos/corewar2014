@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Tue Mar 25 15:13:41 2014 chapui_s
-** Last update Wed Apr  9 16:55:32 2014 chapui_s
+** Last update Thu Apr 10 11:34:50 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -70,14 +70,11 @@ static int	exec_function(t_corewar *core,
   /*   printf("PC = %d\n\n", champions->pc); */
   if (instruction->code < 17 && instruction->code > 0)
   {
-    /* printf("\nOK\n"); */
     if ((tab_func[instruction->code - 1].function(core,
 						  champions,
 						  instruction)) == -1)
       return (-1);
   }
-  /* else */
-  /*   printf("\nNO FOUND\n"); */
   return (0);
 }
 
@@ -90,9 +87,7 @@ void		get_cycle_to_wait(t_corewar *core, t_champions *champions)
     index = index + MEM_SIZE;
   index = index % MEM_SIZE;
   if (core->arena[index] >= 1 && core->arena[index] <= 16)
-  {
     champions->cycle_to_wait = op_tab[core->arena[index] - 1].nbr_cycles;
-  }
   else
     champions->cycle_to_wait = 0;
 }

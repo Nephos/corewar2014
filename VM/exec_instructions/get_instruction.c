@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Tue Mar 25 15:28:46 2014 chapui_s
-** Last update Sun Apr  6 12:43:56 2014 chapui_s
+** Last update Thu Apr 10 16:52:14 2014 chapui_s
 */
 
 #include "../machine.h"
@@ -27,7 +27,7 @@ static void	fulfil_params(t_corewar *core,
     if (tmp_type >> 6 == 1)
     {
       instruction->params[i] = read_arena(core, decal, 1);
-      decal += 1;
+      decal += T_REG;
     }
     else if (tmp_type >> 6 == 0b10)
     {
@@ -35,7 +35,7 @@ static void	fulfil_params(t_corewar *core,
 	  && instruction->code != LLDI)
       {
 	instruction->params[i] = read_arena(core, decal, 4);
-	decal += 4;
+	decal += T_IND;
       }
       else
       {
@@ -43,19 +43,19 @@ static void	fulfil_params(t_corewar *core,
 	    || (instruction->code == LDI && (decal - champion->pc == 2 || decal - champion->pc == 4)))
 	{
 	  instruction->params[i] = read_arena(core, decal, 2);
-	  decal += 2;
+	  decal += T_DIR;
 	}
 	else
 	{
 	  instruction->params[i] = read_arena(core, decal, 4);
-	  decal += 4;
+	  decal += T_IND;
 	}
       }
     }
     else
     {
       instruction->params[i] = read_arena(core, decal, 2);
-      decal += 2;
+      decal += T_DIR;
     }
     tmp_type = tmp_type << 2;
     i += 1;

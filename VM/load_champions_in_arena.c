@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 16:06:34 2014 chapui_s
-** Last update Thu Apr 10 00:11:37 2014 chapui_s
+** Last update Thu Apr 10 11:31:20 2014 chapui_s
 */
 
 #include <sys/types.h>
@@ -95,9 +95,17 @@ int			load_champions_in_arena(unsigned char *arena,
 						unsigned char *info_arena,
 						t_corewar *core)
 {
+  t_champions		*tmp;
+
   if ((load_file_in_arena(arena, info_arena, core->champions)) == -1)
     return (-1);
   init_values_champions(core->champions);
   core->prog_number_max = find_max_prog_number(core->champions);
+  tmp = core->champions;
+  while (tmp)
+  {
+    get_cycle_to_wait(core, tmp);
+    tmp = tmp->next;
+  }
   return (0);
 }

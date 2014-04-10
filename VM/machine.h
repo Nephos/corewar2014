@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Thu Apr 10 02:18:27 2014 chapui_s
+** Last update Thu Apr 10 11:34:43 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -92,7 +92,6 @@ typedef struct		s_functions
 # define WIN_X		(1345)
 # define WIN_Y		(800)
 # define MAX_PC		(15000)
-/* # define WIN_Y		(710) */
 
 int			usage(void);
 int			my_putstr(char *s, int fd);
@@ -190,7 +189,10 @@ int			is_indirect(int octet_type, int num_param);
 int			is_register(unsigned char octet_type, int num_param);
 int			is_good_register(int nb);
 int			manage_instructions(t_corewar *core);
-int			disp_info_players(t_corewar *core, t_gui *gui, int cycles, int pause);
+int			disp_info_players(t_corewar *core,
+					  t_gui *gui,
+					  int cycles,
+					  int pause);
 char			*int_to_str(int nb, char *s);
 void			get_color_champions(t_gui *gui, unsigned char c);
 void			get_list_pc(t_corewar *core, t_gui *gui);
@@ -214,5 +216,7 @@ int			check_place_arena(unsigned char *info_arena,
 					  unsigned int *i);
 int			load_players_name(t_corewar *core, t_gui *gui);
 int			manage_event(t_corewar *core, t_gui *gui, int *pause);
+void			get_cycle_to_wait(t_corewar *core,
+					  t_champions *champions);
 
 #endif /* !MACHINE_H_ */
