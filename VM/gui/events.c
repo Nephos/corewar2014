@@ -5,17 +5,20 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 00:54:12 2014 chapui_s
-** Last update Thu Apr 10 01:24:26 2014 chapui_s
+** Last update Thu Apr 10 02:24:57 2014 chapui_s
 */
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_ttf.h>
+#include "../../op/op.h"
 #include "../machine.h"
 
-int		manage_event(t_gui *gui,
+int		manage_event(t_corewar *core,
+			     t_gui *gui,
 			     int *pause)
 {
   SDL_Event	event;
+  static int	is_dump;
 
   while (SDL_PollEvent(&event))
   {
@@ -28,6 +31,14 @@ int		manage_event(t_gui *gui,
     }
     if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_SPACE)
       *pause = !(*pause);
+    else if (*pause != 0
+	     && event.type == SDL_KEYDOWN
+	     && event.key.keysym.sym == SDLK_d)
+      is_dump += 1;
+    else if (event.type == SDL_KEYDOWN)
+      is_dump = 0;
+    if (is_dump == 3)
+      my_showmem(core->arena, MEM_SIZE);
   }
-  return (*pause);
+  return ((is_dump == 3) ? (-1) : (*pause));
 }

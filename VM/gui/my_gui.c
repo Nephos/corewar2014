@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 16:31:07 2014 chapui_s
-** Last update Thu Apr 10 01:41:28 2014 chapui_s
+** Last update Thu Apr 10 02:18:41 2014 chapui_s
 */
 
 #include <SDL/SDL.h>
@@ -74,7 +74,7 @@ int		get_arena(t_corewar *core,
   pause = 0;
   while (1)
   {
-    if ((pause = manage_event(gui, &pause)) == -1)
+    if ((pause = manage_event(core, gui, &pause)) == -1)
       return (0);
     if (pause == 0)
     {
@@ -87,6 +87,8 @@ int		get_arena(t_corewar *core,
     else
       if ((disp_arena(core, gui, j, 1)) == -1)
 	return (-1);
+    if (j == core->nbr_cycle_dump)
+      return (my_showmem(core->arena, MEM_SIZE));
   }
   return (0);
 }

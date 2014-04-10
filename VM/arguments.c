@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 16:29:06 2014 chapui_s
-** Last update Wed Apr  9 23:47:58 2014 chapui_s
+** Last update Thu Apr 10 02:13:51 2014 chapui_s
 */
 
 #include "../op/op.h"
@@ -82,10 +82,25 @@ int		save_args(int argc, char **argv, t_corewar *core)
   return (0);
 }
 
+void		get_dump(int argc, char **argv, t_corewar *core)
+{
+  int		i;
+
+  i = 0;
+  core->nbr_cycle_dump = 0;
+  while (i < argc)
+  {
+    if (my_strcmp(argv[i], "-dump") == 0)
+      core->nbr_cycle_dump = my_unsigned_atoi(argv[i + 1]);
+    i += 1;
+  }
+}
+
 int		get_args(int argc, char **argv, t_corewar *core)
 {
   if (is_error_in_args(argc, argv) == -1)
     return (usage());
+  get_dump(argc, argv, core);
   if ((save_args(argc, argv, core)) == -1)
     return (-1);
   if ((attribute_prog_number(core->champions,
