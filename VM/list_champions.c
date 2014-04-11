@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 19:29:58 2014 chapui_s
-** Last update Thu Mar 20 20:19:27 2014 chapui_s
+** Last update Wed Apr  2 23:02:13 2014 chapui_s
 */
 
 #include <stdlib.h>
@@ -21,6 +21,7 @@ static t_champions	*create_champion(char *filename,
   {
     new->filename = filename;
     new->prog_number = prog_number;
+    new->color_gui = prog_number;
     new->load_address = load_address;
     new->next = NULL;
   }
@@ -29,14 +30,14 @@ static t_champions	*create_champion(char *filename,
   return (new);
 }
 
-int		push_champion(t_champions **list_champion,
+int		push_champion(t_corewar *core,
 			      char *filename,
 			      unsigned int prog_number,
 			      unsigned int load_address)
 {
   t_champions	*tmp;
 
-  tmp = *list_champion;
+  tmp = core->champions;
   if (tmp)
   {
     while (tmp->next)
@@ -45,11 +46,15 @@ int		push_champion(t_champions **list_champion,
 				     prog_number,
 				     load_address)) == NULL)
       return (-1);
+    core->last_champions = tmp->next;
   }
   else
-    if ((*list_champion = create_champion(filename,
-					  prog_number,
-					  load_address)) == NULL)
+  {
+    if ((core->champions = create_champion(filename,
+					   prog_number,
+					   load_address)) == NULL)
       return (-1);
+    core->last_champions = core->champions;
+  }
   return (0);
 }

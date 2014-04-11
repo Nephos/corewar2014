@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 20:21:19 2014 chapui_s
-** Last update Thu Mar 20 20:46:06 2014 chapui_s
+** Last update Wed Apr  2 18:09:24 2014 chapui_s
 */
 
 #include "../machine.h"
@@ -87,6 +87,11 @@ int		attribute_prog_number(t_champions *list_champion,
   {
     attribute_i_to_someone(list_champion, i);
     i += 1;
+  }
+  while (list_champion)
+  {
+    list_champion->color_gui = list_champion->prog_number;
+    list_champion = list_champion->next;
   }
   return (0);
 }

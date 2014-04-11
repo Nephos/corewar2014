@@ -5,9 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 16:29:06 2014 chapui_s
-** Last update Mon Mar 24 18:52:30 2014 chapui_s
+** Last update Thu Apr 10 02:13:51 2014 chapui_s
 */
 
+#include "../op/op.h"
 #include "machine.h"
 
 int		is_error_in_args(int argc, char **argv)
@@ -52,10 +53,10 @@ int			save_champion(int i, char **argv, t_corewar *core)
     if (!(my_strcmp(argv[i], "-n")))
       prog_number = my_unsigned_atoi(argv[i + 1]);
     if (!(my_strcmp(argv[i], "-a")))
-      load_address = my_unsigned_atoi(argv[i + 1]);
+      load_address = (my_unsigned_atoi(argv[i + 1]) % MEM_SIZE);
     i -= 1;
   }
-  if ((push_champion(&(core->champions),
+  if ((push_champion(core,
 		     argv[cur],
 		     prog_number,
 		     load_address)) == -1)
@@ -63,7 +64,7 @@ int			save_champion(int i, char **argv, t_corewar *core)
   return (0);
 }
 
-void		save_args(int argc, char **argv, t_corewar *core)
+int		save_args(int argc, char **argv, t_corewar *core)
 {
   int		i;
   unsigned int	nb_cor;
@@ -73,18 +74,35 @@ void		save_args(int argc, char **argv, t_corewar *core)
   while (i < argc)
   {
     if (is_file_dot_cor(argv[i]) == 1 && ++nb_cor)
-      save_champion(i, argv, core);
+      if ((save_champion(i, argv, core)) == -1)
+	return (-1);
     i += 1;
   }
   core->nb_champions = nb_cor;
+  return (0);
+}
+
+void		get_dump(int argc, char **argv, t_corewar *core)
+{
+  int		i;
+
+  i = 0;
+  core->nbr_cycle_dump = 0;
+  while (i < argc)
+  {
+    if (my_strcmp(argv[i], "-dump") == 0)
+      core->nbr_cycle_dump = my_unsigned_atoi(argv[i + 1]);
+    i += 1;
+  }
 }
 
 int		get_args(int argc, char **argv, t_corewar *core)
 {
-  (void)core;
   if (is_error_in_args(argc, argv) == -1)
     return (usage());
-  save_args(argc, argv, core);
+  get_dump(argc, argv, core);
+  if ((save_args(argc, argv, core)) == -1)
+    return (-1);
   if ((attribute_prog_number(core->champions,
 			     core->nb_champions)) == -1)
     return (-1);

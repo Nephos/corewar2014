@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 16:31:07 2014 chapui_s
-** Last update Mon Mar 24 18:46:33 2014 chapui_s
+** Last update Fri Apr  4 16:18:12 2014 chapui_s
 */
 
 static char	hex_to_char(unsigned char hex)
