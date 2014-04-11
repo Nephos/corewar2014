@@ -5,11 +5,11 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 18:49:25 2014 chapui_s
-** Last update Thu Apr 10 01:42:54 2014 chapui_s
+** Last update Thu Apr 10 18:12:26 2014 poulet_a
 */
 
-#include <SDL/SDL.h>
-#include <SDL/SDL_ttf.h>
+#include "../SDL/SDL.h"
+#include "../SDL/SDL_ttf.h"
 #include "../machine.h"
 
 void		get_list_pc(t_corewar *core, t_gui *gui)
