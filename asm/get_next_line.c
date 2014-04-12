@@ -10,6 +10,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include "asm.h"
 #include "get_next_line.h"
 
 t_fd		*find_fd_or_create_it(t_fd **pile_fd, int fd)
@@ -65,17 +66,15 @@ int		add_str_to(char **dest, char *src)
   int		j;
 
   i = 0;
-  j = 0;
   src[BUF_SIZE] = '\0';
   while (*dest && (*dest)[i])
     i = i + 1;
-  while (src[j++])
-    ;
-  if ((tmp = (char*)malloc(sizeof(char) * (i + j + 1))) == NULL)
+  if ((tmp = (char*)malloc(sizeof(char) * (i + my_strlen(src) + 1))) == NULL)
     return (1);
   i = 0;
+  j = 0;
   while (*dest && (*dest)[i])
-    tmp[i] = (*dest)[i++];
+    tmp[j++] = (*dest)[i++];
   j = 0;
   while (src[j])
     tmp[i++] = src[j++];
@@ -103,9 +102,9 @@ char		*return_it(char **str, char **to_return)
   if ((new_str = (char*)malloc(sizeof(char) * (j + 1))) == NULL)
     return (NULL);
   (*to_return)[i] = 0;
-  i = 0 ;
-  while ((*str)[i] != '\n' && (*str)[i])
-    (*to_return)[i] = (*str)[i++];
+  i = -1;
+  while ((*str)[++i] != '\n' && (*str)[i])
+    (*to_return)[i] = (*str)[i];
   new_str[j] = 0;
   j = 0;
   while ((*str)[++i])

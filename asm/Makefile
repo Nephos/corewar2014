@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Apr 10 18:23:50 2014 chapui_s
-## Last update Sat Apr 12 02:04:33 2014 chapui_s
+## Last update Sat Apr 12 15:52:49 2014 poulet_a
 ##
 
 NAME	= asm
@@ -18,7 +18,6 @@ SRC	= main.c \
 	  my_str_to_wordtab.c \
 	  is_type.c \
 	  my_strcmp.c \
-	  op.c \
 	  get_size.c \
 	  int_to_str.c \
 	  resolve_label.c \
@@ -37,7 +36,8 @@ SRC	= main.c \
 	  check_instruction.c \
 	  msg_bad.c \
 	  write_file.c \
-	  read_file.c
+	  read_file.c \
+	  ../op/op.c
 
 OBJ	= $(SRC:.c=.o)
 

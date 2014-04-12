@@ -5,14 +5,16 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 14:45:46 2014 chapui_s
-** Last update Sat Apr 12 15:23:53 2014 chapui_s
+<<<<<<< HEAD
+** Last update Sat Apr 12 16:28:36 2014 chapui_s
+=======
+** Last update Sat Apr 12 15:55:03 2014 poulet_a
+>>>>>>> bcab99eb2bafc38ea388b98f53a42551087ab8c7
 */
 
-#include <stdlib.h>
-#include "../op/op.h"
-#include "machine.h"
-
 #include <stdio.h>
+#include <stdlib.h>
+#include "machine.h"
 
 void		disp_args(t_corewar *core)
 {
@@ -54,6 +56,5 @@ int		main(int argc, char **argv)
     return (-1);
   if ((load_arena(&core)) == -1)
     return (-1);
-//  disp_args(&core);
   return (0);
 }

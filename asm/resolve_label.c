@@ -5,12 +5,11 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 18:08:18 2014 chapui_s
-** Last update Fri Apr 11 21:39:28 2014 chapui_s
+** Last update Sat Apr 12 16:24:21 2014 poulet_a
 */
 
 #include <stdlib.h>
 #include "asm.h"
-#include "op.h"
 
 static char	*get_new_label(char *label)
 {
@@ -94,7 +93,8 @@ static int	is_two_same_label(t_file *file)
 	return (-1);
       while (tmp)
       {
-      	if (is_label(tmp->tab[0]) && my_strcmp(file->tab[0], tmp->tab[0]) == 0)
+      	if (is_label(tmp->tab[0])
+	    && my_strcmp(file->tab[0], tmp->tab[0]) == 0)
       	{
 	  my_putstr("error: this label defined more than one time: '", 2);
 	  my_putstr(tmp->tab[0], 2);

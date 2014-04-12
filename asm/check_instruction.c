@@ -5,11 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 18:08:18 2014 chapui_s
-** Last update Sat Apr 12 02:24:52 2014 chapui_s
+** Last update Sat Apr 12 15:49:44 2014 poulet_a
 */
 
 #include "asm.h"
-#include "op.h"
 
 static int	check_reg(char *param, char *line)
 {

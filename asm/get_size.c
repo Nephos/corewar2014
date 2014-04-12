@@ -5,11 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 18:08:18 2014 chapui_s
-** Last update Sat Apr 12 02:13:13 2014 chapui_s
+** Last update Sat Apr 12 15:50:33 2014 poulet_a
 */
 
 #include "asm.h"
-#include "op.h"
 
 static int	is_special(char *instruction, int param_n)
 {

@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Sat Apr 12 15:54:33 2014 chapui_s
+## Last update Sat Apr 12 16:29:15 2014 chapui_s
 ##
 
 NAME		= corewar
@@ -79,7 +79,7 @@ CC		= gcc
 RM		= rm -rf
 
 CFLAGS		+=-Wall -Wextra -ggdb
-CFLAGS		+= -L./SDL -lSDL -lSDL_ttf
+CFLAGS		+= -L./SDL -lSDL -lSDL_ttf -Xlinker "-rpath=./SDL"
 
 all:		$(NAME)
 

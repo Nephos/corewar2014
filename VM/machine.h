@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Sat Apr 12 16:15:14 2014 chapui_s
+** Last update Sat Apr 12 16:29:02 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -13,6 +13,7 @@
 
 # include "SDL/SDL.h"
 # include "SDL/SDL_ttf.h"
+# include "../op/op.h"
 
 typedef struct		s_instruction
 {

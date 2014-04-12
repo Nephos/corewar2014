@@ -5,10 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Apr 11 01:02:39 2014 chapui_s
-** Last update Fri Apr 11 01:04:17 2014 chapui_s
+** Last update Sat Apr 12 15:50:13 2014 poulet_a
 */
 
-#include "op.h"
+#include "asm.h"
 
 int		is_register(char *str)
 {

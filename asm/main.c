@@ -5,9 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 18:08:18 2014 chapui_s
-** Last update Sat Apr 12 02:25:05 2014 chapui_s
+** Last update Sat Apr 12 15:50:51 2014 poulet_a
 */
 
+#include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -15,9 +16,6 @@
 #include <unistd.h>
 #include "asm.h"
 #include "get_next_line.h"
-#include "op.h"
-
-#include <stdio.h>
 
 void		disp_list(t_file *file)
 {

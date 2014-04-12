@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Apr 11 19:26:54 2014 chapui_s
-** Last update Fri Apr 11 19:45:57 2014 chapui_s
+** Last update Sat Apr 12 15:20:05 2014 poulet_a
 */
 
 static int	is_little(void)
@@ -17,7 +17,6 @@ static int	is_little(void)
     return (1);
   return (0);
 }
-
 
 static int	swap_two_octets(int nb)
 {
