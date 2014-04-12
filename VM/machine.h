@@ -126,6 +126,7 @@ int			get_color(t_gui *gui,
 int			get_name_comment_champions(t_champions *champions,
 						   int *fd);
 int			my_strlen(char *s);
+char			*my_strcat(char *s1, char *s2);
 void			get_instruction(t_corewar *core,
 					t_champions *champions,
 					t_instruction *instruction);

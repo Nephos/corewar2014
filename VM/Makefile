@@ -36,6 +36,7 @@ SRC		= main.c \
 	  	  $(UTIL_DIR)/attribute_prog_number.c \
 	  	  $(UTIL_DIR)/attribute_address.c \
 	  	  $(UTIL_DIR)/my_strlen.c \
+		  $(UTIL_DIR)/my_strcat.c \
 	  	  $(UTIL_DIR)/swap_int.c \
 	  	  $(UTIL_DIR)/check_place_arena.c \
 	  	  $(UTIL_DIR)/get_size.c \
@@ -44,6 +45,7 @@ SRC		= main.c \
 	  	  $(UTIL_DIR)/attribute_one_two_three_addr.c \
 	  	  $(UTIL_DIR)/get_info_champions.c \
 		  $(GUI_DIR)/my_gui.c \
+		  $(GUI_DIR)/get_img.c \
 		  $(GUI_DIR)/events.c \
 		  $(GUI_DIR)/hex_to_str.c \
 		  $(GUI_DIR)/get_color.c \
