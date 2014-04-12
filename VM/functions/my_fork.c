@@ -5,12 +5,11 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Wed Apr  2 16:38:53 2014 chapui_s
-** Last update Thu Apr 10 18:01:24 2014 poulet_a
+** Last update Sat Apr 12 16:38:59 2014 poulet_a
 */
 
-#include "../../op/op.h"
-#include "../machine.h"
 #include <stdlib.h>
+#include "../machine.h"
 
 static int	*copy_reg(int *father)
 {
