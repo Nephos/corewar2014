@@ -5,12 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Tue Mar 25 00:20:38 2014 chapui_s
-** Last update Thu Apr 10 18:13:05 2014 poulet_a
+** Last update Sat Apr 12 17:49:31 2014 poulet_a
 */
 
 #include <unistd.h>
-#include "../SDL/SDL.h"
-#include "../SDL/SDL_ttf.h"
 #include "../machine.h"
 
 int		disp_players(t_gui *gui)

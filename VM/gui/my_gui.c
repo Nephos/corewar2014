@@ -5,13 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 16:31:07 2014 chapui_s
-** Last update Sat Apr 12 16:24:49 2014 chapui_s
+** Last update Sat Apr 12 17:50:17 2014 poulet_a
 */
 
 #include <unistd.h>
-#include "../SDL/SDL.h"
-#include "../SDL/SDL_ttf.h"
-#include "../../op/op.h"
 #include "../machine.h"
 
 int		print_bytes(t_corewar *core,

@@ -5,12 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 16:31:07 2014 chapui_s
-** Last update Sat Apr 12 16:23:54 2014 chapui_s
+** Last update Sat Apr 12 17:50:12 2014 poulet_a
 */
 
 #include <unistd.h>
-#include "../SDL/SDL.h"
-#include "../SDL/SDL_ttf.h"
 #include "../machine.h"
 
 int		load_players_name(t_corewar *core, t_gui *gui)
