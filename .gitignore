@@ -22,4 +22,4 @@
 .*#
 
 asm/asm
-corewar/corewar
+VM/corewar

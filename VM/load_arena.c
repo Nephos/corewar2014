@@ -5,13 +5,13 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 15:35:36 2014 chapui_s
-** Last update Sat Apr 12 17:08:52 2014 chapui_s
+** Last update Sat Apr 12 18:26:00 2014 chapui_s
 */
 
 #include <stdlib.h>
 #include "machine.h"
 
-int		load_arena(t_corewar *core)
+int		load_arena(t_corewar *core, char *exec_name)
 {
   core->nbr_live_cur = 0;
   core->cycle_to_die_cur = CYCLE_TO_DIE;

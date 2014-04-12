@@ -5,13 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 00:54:12 2014 chapui_s
-** Last update Thu Apr 10 18:12:07 2014 poulet_a
+** Last update Sat Apr 12 17:49:49 2014 poulet_a
 */
 
-#include "../../op/op.h"
 #include "../machine.h"
-#include "../SDL/SDL.h"
-#include "../SDL/SDL_ttf.h"
 
 int		manage_event(t_corewar *core,
 			     t_gui *gui,
