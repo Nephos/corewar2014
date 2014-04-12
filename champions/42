@@ -1,5 +1,5 @@
-.name           ""
-.comment        ""
+.name           "42"
+.comment        "Just a basic Winner Program"
 
 entree:	live	%42		; entree
 	fork	%:tir
@@ -9,7 +9,7 @@ entree:	live	%42		; entree
 tir:	sti	r1,%:tirb,%1
 	ld	%2304,r10
 	ld	%1,r5
-	ld	%0,r11		;
+	ld	%0,r11
 
 	ld	%4,r3
 tirf:	live	%42
@@ -150,7 +150,7 @@ tart:	sti	r1,%:p64li,%1
 	zjmp	%:p64
 	sub	r2,r4,r2
 	zjmp	%:p32
-	sub	r2,r4,r2
+#	sub	r2,r4,r2
 #	zjmp	%:infi
 #	sub	r2,r4,r2
 #	zjmp	%:infi
