@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Sat Apr 12 16:29:15 2014 chapui_s
+## Last update Sat Apr 12 18:36:42 2014 chapui_s
 ##
 
 NAME		= corewar
@@ -19,6 +19,7 @@ FUNC_DIR	= functions
 EXEC_DIR	= exec_instructions
 
 SRC		= main.c \
+		  desassembleur.c \
 		  arguments.c \
 		  list_champions.c \
 		  load_arena.c \

@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Sat Apr 12 17:22:54 2014 chapui_s
+** Last update Sat Apr 12 18:37:15 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -114,7 +114,7 @@ int			attribute_prog_number(t_champions *list_champions,
 					      unsigned int nb_champions);
 int			attribute_address(t_champions *list_champions,
 					  unsigned int nb_champions);
-int			load_arena(t_corewar *core, char *exec_name);
+int			load_arena(t_corewar *core);
 void			init_arena(unsigned char *ptr, unsigned int size, int value);
 void			my_putchar(char c);
 int			load_champions_in_arena(unsigned char *arena,
@@ -227,5 +227,6 @@ void			get_cycle_to_wait(t_corewar *core,
 int			check_live_process(t_corewar *core,
 					   unsigned int cycle_to_die_cur);
 void			my_putnbr(int nb);
+int			desassemble_it(t_corewar *core);
 
 #endif /* !MACHINE_H_ */

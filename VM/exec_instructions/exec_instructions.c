@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Tue Mar 25 15:13:41 2014 chapui_s
-** Last update Sat Apr 12 16:33:59 2014 poulet_a
+** Last update Sat Apr 12 18:35:14 2014 chapui_s
 */
 
 #include "../machine.h"
@@ -30,39 +30,6 @@ t_functions	tab_func[] =
   {16, my_aff},
 };
 
-/* void	putbin(int nb) */
-/* { */
-/*   if (nb >= 2) */
-/*     putbin(nb / 2); */
-/*   my_putchar((nb % 2) + '0'); */
-/* } */
-
-/* printf("%s\n", champions->name); */
-/*   (instruction->code == 1) ? (printf("LIVE\n")) : (0); */
-/*   (instruction->code == 2) ? (printf("LD\n")) : (0); */
-/*   (instruction->code == 3) ? (printf("ST\n")) : (0); */
-/*   (instruction->code == 4) ? (printf("ADD\n")) : (0); */
-/*   (instruction->code == 5) ? (printf("SUB\n")) : (0); */
-/*   (instruction->code == 6) ? (printf("AND\n")) : (0); */
-/*   (instruction->code == 7) ? (printf("OR\n")) : (0); */
-/*   (instruction->code == 8) ? (printf("XOR\n")) : (0); */
-/*   (instruction->code == 9) ? (printf("ZJMP\n")) : (0); */
-/*   (instruction->code == 10) ? (printf("LDI\n")) : (0); */
-/*   (instruction->code == 11) ? (printf("STI\n")) : (0); */
-/*   (instruction->code == 12) ? (printf("FORK\n")) : (0); */
-/*   (instruction->code == 13) ? (printf("LDD\n")) : (0); */
-/*   (instruction->code == 14) ? (printf("LLDI\n")) : (0); */
-/*   (instruction->code == 15) ? (printf("LFORK\n")) : (0); */
-/*   (instruction->code == 16) ? (printf("AFF\n")) : (0); */
-/*   printf("TYPE = %d\n", instruction->type); */
-/*     /\* my_putstr("TYPE: ", 1); *\/ */
-/*     /\* putbin(instruction->type); *\/ */
-/*   printf("[1] = %d [2] = %d [3] = %d [4] = %d\n", */
-/*   	   instruction->params[0], */
-/*   	   instruction->params[1], */
-/*   	   instruction->params[2], */
-/*   	   instruction->params[3]); */
-/*   printf("PC = %d\n\n", champions->pc); */
 static int	exec_function(t_corewar *core,
 			      t_champions *champions,
 			      t_instruction *instruction)
