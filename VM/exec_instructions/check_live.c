@@ -5,10 +5,9 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Sat Apr 12 15:53:48 2014 chapui_s
-** Last update Sat Apr 12 16:18:29 2014 chapui_s
+** Last update Sat Apr 12 16:31:26 2014 poulet_a
 */
 
-#include "../../op/op.h"
 #include "../machine.h"
 
 static void	winner(t_corewar *core)

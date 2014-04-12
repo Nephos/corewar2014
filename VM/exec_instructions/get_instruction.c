@@ -5,11 +5,10 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Tue Mar 25 15:28:46 2014 chapui_s
-** Last update Sat Apr 12 15:48:34 2014 chapui_s
+** Last update Sat Apr 12 16:34:09 2014 poulet_a
 */
 
 #include "../machine.h"
-#include "../../op/op.h"
 
 static int	is_special(t_champions *champion,
 			   t_instruction *instruction,

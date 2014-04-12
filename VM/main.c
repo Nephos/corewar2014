@@ -5,11 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 14:45:46 2014 chapui_s
-<<<<<<< HEAD
-** Last update Sat Apr 12 16:28:36 2014 chapui_s
-=======
-** Last update Sat Apr 12 15:55:03 2014 poulet_a
->>>>>>> bcab99eb2bafc38ea388b98f53a42551087ab8c7
+** Last update Sat Apr 12 16:32:43 2014 poulet_a
 */
 
 #include <stdio.h>
