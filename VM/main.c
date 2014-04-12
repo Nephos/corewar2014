@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 14:45:46 2014 chapui_s
-** Last update Thu Apr 10 00:12:02 2014 chapui_s
+** Last update Sat Apr 12 15:23:53 2014 chapui_s
 */
 
 #include <stdlib.h>
@@ -44,7 +44,6 @@ void		disp_args(t_corewar *core)
     i += 1;
   }
 }
-
 
 int		main(int argc, char **argv)
 {

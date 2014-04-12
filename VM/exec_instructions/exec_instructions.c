@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Tue Mar 25 15:13:41 2014 chapui_s
-** Last update Thu Apr 10 11:34:50 2014 chapui_s
+** Last update Sat Apr 12 16:20:11 2014 chapui_s
 */
 
 #include "../../op/op.h"
@@ -68,7 +68,7 @@ static int	exec_function(t_corewar *core,
   /*   	   instruction->params[2], */
   /*   	   instruction->params[3]); */
   /*   printf("PC = %d\n\n", champions->pc); */
-  if (instruction->code < 17 && instruction->code > 0)
+  if (instruction->code <= REG_NUMBER && instruction->code > 0)
   {
     if ((tab_func[instruction->code - 1].function(core,
 						  champions,
@@ -114,61 +114,6 @@ int		exec_instructions(t_corewar *core, t_champions *champions)
       return (0);
     tmp = tmp->next;
   }
-  return (0);
-}
-
-int		search_who_still_alive(t_corewar *core)
-{
-  t_champions	*tmp;
-  int		id_champion;
-
-  tmp = core->champions;
-  id_champion = 0;
-  while (tmp)
-  {
-    if (id_champion != 0 && id_champion != tmp->color_gui)
-      return (1);
-    else
-      id_champion = tmp->color_gui;
-    tmp = tmp->next;
-  }
-  if (core->champions)
-    printf("%s won !\n", core->champions->name);
-  return (0);
-}
-
-int		check_live_process(t_corewar *core,
-				   unsigned int cycle_to_die_cur)
-{
-  t_champions	*tmp;
-  t_champions	*tmp_to_rm;
-
-  tmp = core->champions;
-  if (tmp && tmp->last_live >= cycle_to_die_cur)
-  {
-    core->champions = tmp->next;
-    free(tmp->reg);
-    free(tmp);
-    core->nb_champions = core->nb_champions - 1;
-    tmp = core->champions;
-  }
-  while (tmp)
-  {
-    if (tmp->next && tmp->next->last_live >= cycle_to_die_cur)
-    {
-      tmp_to_rm = tmp->next;
-      tmp->next = tmp->next->next;
-      if (tmp->next == NULL)
-	core->last_champions = tmp;
-      free(tmp_to_rm->reg);
-      free(tmp_to_rm);
-      core->nb_champions = core->nb_champions - 1;
-    }
-    else
-     tmp = tmp->next;
-  }
-  if ((search_who_still_alive(core)) == 0)
-    return (1);
   return (0);
 }
 

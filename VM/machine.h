@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Thu Apr 10 18:06:32 2014 poulet_a
+** Last update Sat Apr 12 16:15:14 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -45,6 +45,8 @@ typedef struct		s_corewar
   unsigned int		nb_champions;
   t_champions		*champions;
   t_champions		*last_champions;
+  int			last_live_nb;
+  char			*last_live_name;
   int			prog_number_max;
   unsigned long long	nbr_cycle_dump;
   int			nbr_live_cur;
@@ -218,5 +220,8 @@ int			load_players_name(t_corewar *core, t_gui *gui);
 int			manage_event(t_corewar *core, t_gui *gui, int *pause);
 void			get_cycle_to_wait(t_corewar *core,
 					  t_champions *champions);
+int			check_live_process(t_corewar *core,
+					   unsigned int cycle_to_die_cur);
+void			my_putnbr(int nb);
 
 #endif /* !MACHINE_H_ */

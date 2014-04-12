@@ -5,7 +5,7 @@
 ## Login   <chapui_s@epitech.eu>
 ## 
 ## Started on  Thu Mar 20 16:53:03 2014 chapui_s
-## Last update Thu Apr 10 18:53:53 2014 poulet_a
+## Last update Sat Apr 12 15:54:33 2014 chapui_s
 ##
 
 NAME		= corewar
@@ -51,6 +51,7 @@ SRC		= main.c \
 		  $(GUI_DIR)/disp_info_players.c \
 		  $(EXEC_DIR)/exec_instructions.c \
 		  $(EXEC_DIR)/get_instruction.c \
+		  $(EXEC_DIR)/check_live.c \
 		  $(FUNC_DIR)/my_live.c \
 		  $(FUNC_DIR)/is_type.c \
 		  $(FUNC_DIR)/my_ld.c \

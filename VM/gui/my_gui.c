@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 16:31:07 2014 chapui_s
-** Last update Thu Apr 10 18:11:07 2014 poulet_a
+** Last update Sat Apr 12 16:24:49 2014 chapui_s
 */
 
 #include <unistd.h>
@@ -41,7 +41,7 @@ int		print_bytes(t_corewar *core,
   return (0);
 }
 
-int		disp_arena(t_corewar *core,
+static int	disp_arena(t_corewar *core,
 			   t_gui *gui,
 			   unsigned long long j,
 			   int pause)
@@ -64,7 +64,7 @@ int		disp_arena(t_corewar *core,
   return (0);
 }
 
-int		get_arena(t_corewar *core,
+static int	get_arena(t_corewar *core,
 			  t_gui *gui)
 {
   int			pause;
@@ -93,7 +93,7 @@ int		get_arena(t_corewar *core,
   return (0);
 }
 
-int		put_background(t_corewar *core, t_gui *gui)
+static int	put_background(t_corewar *core, t_gui *gui)
 {
   gui->pos_background.x = 0;
   gui->pos_background.y = 705;
