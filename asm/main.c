@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 18:08:18 2014 chapui_s
-** Last update Sat Apr 12 15:50:51 2014 poulet_a
+** Last update Sat Apr 12 18:24:10 2014 poulet_a
 */
 
 #include <stdio.h>
@@ -16,34 +16,6 @@
 #include <unistd.h>
 #include "asm.h"
 #include "get_next_line.h"
-
-void		disp_list(t_file *file)
-{
-  int		i;
-
-  while (file)
-  {
-    i = 0;
-    my_putstr(file->line, 1);
-    my_putstr("\n", 1);
-    printf("size = %d\n", file->byte_n_before);
-    while (file->tab[i])
-    {
-      printf("--> %s\n", file->tab[i]);
-      i += 1;
-    }
-    i = 0;
-    while (i < 3 && file->tab[i + 1])
-    {
-      printf("type[%d] = %d\n", i, file->type[i]);
-      i += 1;
-    }
-    printf("nb_args = %d\n", file->nb_args);
-    printf("size = %d\n", file->byte_n_after);
-    my_putstr("\n", 1);
-    file = file->next;
-  }
-}
 
 int		compile_it(char *filename)
 {
