@@ -5,10 +5,9 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 14:45:46 2014 chapui_s
-** Last update Sat Apr 12 18:37:27 2014 chapui_s
+** Last update Sat Apr 12 18:38:13 2014 chapui_s
 */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include "machine.h"
 
