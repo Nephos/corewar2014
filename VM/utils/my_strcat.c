@@ -25,8 +25,9 @@ char	*my_strcat(char *s1, char *s2)
   while (s1[++i])
     r[i] = s1[i];
   j = -1;
+  --i;
   while (s2[++j])
-    r[i++] = s1[j];
+    r[i++] = s2[j];
   r[i] = 0;
   return (r);
 }

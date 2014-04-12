@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include "machine.h"
 
-int		load_arena(t_corewar *core)
+int		load_arena(t_corewar *core, char *exec_name)
 {
   core->nbr_live_cur = 0;
   core->cycle_to_die_cur = CYCLE_TO_DIE;
@@ -23,6 +23,6 @@ int		load_arena(t_corewar *core)
   init_arena(core->info_arena, MEM_SIZE, 0);
   if ((load_champions_in_arena(core->arena, core->info_arena, core)) == -1)
     return (-1);
-  my_gui(core);
+  my_gui(core, exec_name);
   return (0);
 }

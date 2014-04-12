@@ -50,7 +50,7 @@ int		main(int argc, char **argv)
   core.champions = NULL;
   if ((get_args(argc, argv, &core)) == -1)
     return (-1);
-  if ((load_arena(&core)) == -1)
+  if ((load_arena(&core, argv[0])) == -1)
     return (-1);
   return (0);
 }

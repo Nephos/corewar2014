@@ -11,18 +11,26 @@
 #include <stdlib.h>
 #include "../machine.h"
 
-char	*get_image_path(char *exec_path)
+int	get_image_path(t_gui *gui, char *exec_path)
 {
   int	i;
   char	*img;
+  char	*ttf;
 
   i = my_strlen(exec_path) - 1;
   while (i >=0 && exec_path[i] != '/')
     --i;
-  if ((img = malloc(sizeof(char) * (i + my_strlen("Corewar.bmp")))) == NULL)
-    return (NULL);
-  exec_path[i] = 0;
-  img = my_strcat(exec_path, "Corewar.bmp");
-  my_putstr(img, 1);
-  return (img);
+  if ((img = malloc(sizeof(char) * (i + my_strlen("Corewar.bmp")))) == NULL ||
+      (ttf = malloc(sizeof(char) * (i + my_strlen("arial.ttf")))) == NULL)
+    return (-1);
+  exec_path[i + 2] = 0;
+  if ((img = my_strcat(exec_path, "Corewar.bmp")) == NULL ||
+      (ttf = my_strcat(exec_path, "arial.ttf")) == NULL)
+    return (-1);
+  if ((gui->background = SDL_LoadBMP(img)) == NULL)
+    return (my_putstr("error: SDL_LoadBMP\n", 2));
+  if ((gui->font = TTF_OpenFont(ttf, 11)) == NULL ||
+      (gui->font_info = TTF_OpenFont(ttf, 13)) == NULL)
+    return (my_putstr("error: TTF_OpenFont\n", 2) | 1);
+  return (0);
 }

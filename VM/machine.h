@@ -113,7 +113,7 @@ int			attribute_prog_number(t_champions *list_champions,
 					      unsigned int nb_champions);
 int			attribute_address(t_champions *list_champions,
 					  unsigned int nb_champions);
-int			load_arena(t_corewar *core);
+int			load_arena(t_corewar *core, char *exec_name);
 void			init_arena(unsigned char *ptr, unsigned int size, int value);
 void			my_putchar(char c);
 int			load_champions_in_arena(unsigned char *arena,
@@ -121,7 +121,8 @@ int			load_champions_in_arena(unsigned char *arena,
 						t_corewar *core);
 
 int			my_showmem(unsigned char *str, int size);
-int			my_gui(t_corewar *core);
+int			my_gui(t_corewar *core, char *exec_name);
+int			get_image_path(t_gui *gui, char *exec_path);
 char			*hex_to_str(unsigned char c, char *str);
 int			get_color(t_gui *gui,
 				  t_corewar *core,

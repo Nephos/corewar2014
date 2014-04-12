@@ -37,6 +37,7 @@ SRC		= main.c \
 	  	  $(UTIL_DIR)/attribute_address.c \
 	  	  $(UTIL_DIR)/my_strlen.c \
 		  $(UTIL_DIR)/my_strcat.c \
+		  $(UTIL_DIR)/my_strdup.c \
 	  	  $(UTIL_DIR)/swap_int.c \
 	  	  $(UTIL_DIR)/check_place_arena.c \
 	  	  $(UTIL_DIR)/get_size.c \

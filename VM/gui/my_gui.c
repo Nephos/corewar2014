@@ -93,20 +93,18 @@ static int	get_arena(t_corewar *core,
   return (0);
 }
 
-static int	put_background(t_corewar *core, t_gui *gui)
+static int	put_background(t_corewar *core, t_gui *gui, char *exec_name)
 {
   gui->pos_background.x = 0;
   gui->pos_background.y = 705;
-  if ((gui->background = SDL_LoadBMP("Corewar.bmp")) == NULL)
-    return (my_putstr("error: SDL_LoadBMP\n", 2));
-  if ((gui->font_info = TTF_OpenFont("arial.ttf", 13)) == NULL)
-    return (my_putstr("error: TTF_OpenFont\n", 2));
+  if (get_image_path(gui, exec_name) != 0)
+    return (-1);
   if ((load_players_name(core, gui)) == -1)
     return (-1);
   return (0);
 }
 
-int		my_gui(t_corewar *core)
+int		my_gui(t_corewar *core, char *exec_name)
 {
   t_gui		*gui;
 
@@ -124,10 +122,8 @@ int		my_gui(t_corewar *core)
   SDL_WM_SetCaption("Corewar", NULL);
   if ((TTF_Init()) == -1)
     return (my_putstr("error: TTF_Init\n", 2));
-  if ((put_background(core, gui)) == -1)
+  if ((put_background(core, gui, exec_name)) == -1)
     return (-1);
-  if ((gui->font = TTF_OpenFont("arial.ttf", 11)) == NULL)
-    return (my_putstr("error: TTF_OpenFont\n", 2));
   if ((gui->list_pc = (int*)malloc(sizeof(int) * (MAX_PC * 2))) == NULL)
     return (my_putstr("error: malloc\n", 2));
   if ((get_arena(core, gui)) == -1)
