@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 16:06:34 2014 chapui_s
-** Last update Thu Apr 10 11:31:20 2014 chapui_s
+** Last update Sat Apr 12 15:54:08 2014 poulet_a
 */
 
 #include <sys/types.h>
@@ -14,7 +14,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include "machine.h"
-#include "../op/op.h"
 
 static int		load_file_in_arena(unsigned char *arena,
 					   unsigned char *info_arena,
