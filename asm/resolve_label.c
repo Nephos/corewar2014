@@ -5,12 +5,11 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 18:08:18 2014 chapui_s
-** Last update Fri Apr 11 21:39:28 2014 chapui_s
+** Last update Sat Apr 12 15:48:48 2014 poulet_a
 */
 
 #include <stdlib.h>
 #include "asm.h"
-#include "op.h"
 
 static char	*get_new_label(char *label)
 {

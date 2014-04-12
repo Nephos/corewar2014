@@ -5,12 +5,11 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 18:35:14 2014 chapui_s
-** Last update Sat Apr 12 02:16:13 2014 chapui_s
+** Last update Sat Apr 12 15:50:45 2014 poulet_a
 */
 
 #include <stdlib.h>
 #include "asm.h"
-#include "op.h"
 
 static t_file	*create_file(char *line)
 {

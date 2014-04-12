@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 18:08:18 2014 chapui_s
-** Last update Sat Apr 12 15:22:35 2014 poulet_a
+** Last update Sat Apr 12 15:50:51 2014 poulet_a
 */
 
 #include <stdio.h>
@@ -16,7 +16,6 @@
 #include <unistd.h>
 #include "asm.h"
 #include "get_next_line.h"
-#include "op.h"
 
 void		disp_list(t_file *file)
 {

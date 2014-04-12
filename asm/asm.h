@@ -5,13 +5,13 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 18:14:52 2014 chapui_s
-** Last update Sat Apr 12 02:05:15 2014 chapui_s
+** Last update Sat Apr 12 15:43:08 2014 poulet_a
 */
 
 #ifndef ASM_H_
 # define ASM_H_
 
-# include "op.h"
+#include "../op/op.h"
 
 typedef struct	s_file
 {

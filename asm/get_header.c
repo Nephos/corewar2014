@@ -5,12 +5,11 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 18:08:18 2014 chapui_s
-** Last update Fri Apr 11 19:46:07 2014 chapui_s
+** Last update Sat Apr 12 15:50:23 2014 poulet_a
 */
 
 #include <stdlib.h>
 #include "asm.h"
-#include "op.h"
 
 static void	init_header(header_t *head)
 {

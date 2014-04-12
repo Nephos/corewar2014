@@ -5,12 +5,11 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 18:08:18 2014 chapui_s
-** Last update Sat Apr 12 02:34:38 2014 chapui_s
+** Last update Sat Apr 12 15:50:27 2014 poulet_a
 */
 
 #include <stdlib.h>
 #include "asm.h"
-#include "op.h"
 
 static int	bad_string(char *line)
 {
