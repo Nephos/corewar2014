@@ -58,5 +58,10 @@ int		main(int argc, char **argv)
       return (-1);
     i += 1;
   }
+  if (i == 1)
+    {
+      my_putstr("no input files\n", 2);
+      return (1);
+    }
   return (0);
 }
