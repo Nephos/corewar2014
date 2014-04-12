@@ -5,12 +5,12 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 16:31:07 2014 chapui_s
-** Last update Thu Apr 10 02:18:41 2014 chapui_s
+** Last update Thu Apr 10 18:11:07 2014 poulet_a
 */
 
-#include <SDL/SDL.h>
-#include <SDL/SDL_ttf.h>
 #include <unistd.h>
+#include "../SDL/SDL.h"
+#include "../SDL/SDL_ttf.h"
 #include "../../op/op.h"
 #include "../machine.h"
 
