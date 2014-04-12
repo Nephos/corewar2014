@@ -1,52 +1,61 @@
 ##
-## Makefile for  in /home/poulet_a/projets/corewar
+## Makefile for Corewar in /home/chapui_s/travaux/my_asm
 ## 
-## Made by poulet_a
-## Login   <poulet_a@epitech.net>
+## Made by chapui_s
+## Login   <chapui_s@epitech.eu>
 ## 
-## Started on  Tue Mar 11 08:22:15 2014 poulet_a
-## Last update Tue Mar 18 13:52:24 2014 poulet_a
+## Started on  Thu Apr 10 18:23:50 2014 chapui_s
+## Last update Sat Apr 12 02:04:33 2014 chapui_s
 ##
 
-CC	=	cc -g
+NAME	= asm
 
-RM	=	rm -f
+SRC	= main.c \
+	  get_next_line.c \
+	  my_putstr.c \
+	  list_file.c \
+	  my_strlen.c \
+	  my_str_to_wordtab.c \
+	  is_type.c \
+	  my_strcmp.c \
+	  op.c \
+	  get_size.c \
+	  int_to_str.c \
+	  resolve_label.c \
+	  remove_bad_stuff.c \
+	  my_atoi.c \
+	  my_showmem.c \
+	  find_type.c \
+	  write_bytes.c \
+	  write_bytes_tools.c \
+	  is_special_case.c \
+	  get_name_comment.c \
+	  convert_endian.c \
+	  get_header.c \
+	  free_asm.c \
+	  my_strchr.c \
+	  check_instruction.c \
+	  msg_bad.c \
+	  write_file.c \
+	  read_file.c
 
-CFLAGS	+=	-W -Wall -pedantic
-CFLAGS	+=	-I../op -I. -Imy
+OBJ	= $(SRC:.c=.o)
 
-NAME	=	asm
+CC	= gcc
 
-SRCS	=	../op/op.c \
-		main.c \
-		argument.c \
-		register.c \
-		file.c \
-		label.c \
-		get_cmd.c \
-		my/get_next_line.c \
-		my/my_match.c \
-		my/my_strlen.c \
-		my/my_strdup.c \
-		my/my_strsplit.c \
-		my/my_getnbr.c \
-		my/my_putstr.c \
-		my/my_isin.c
+RM	= rm -rf
 
-OBJS	=	$(SRCS:.c=.o)
+CFLAGS	= -Wall -Wextra -ggdb
 
+all:	$(NAME)
 
-all:		$(NAME)
-
-$(NAME):	$(OBJS)
-		$(CC) $(OBJS) -o $(NAME)
+$(NAME):	$(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
 
 clean:
-		$(RM) $(OBJS)
+	$(RM) $(OBJ)
 
-fclean:		clean
-		$(RM) $(NAME)
+fclean:	clean
+	$(RM) $(NAME)
 
-re:		fclean all
-
-.PHONY:		clean fclean all re
+re:	fclean all
