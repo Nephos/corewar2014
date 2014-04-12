@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 14:45:46 2014 chapui_s
-** Last update Sat Apr 12 18:42:34 2014 chapui_s
+** Last update Sat Apr 12 18:55:43 2014 chapui_s
 */
 
 #include "machine.h"
@@ -38,7 +38,10 @@ void		print_instruction(t_instruction *instruction)
     i = 0;
     if (instruction->code == LIVE || instruction->code == ZJMP
 	|| instruction->code == FORK || instruction->code == LFORK)
+    {
+      (instruction->code == LIVE) ? (my_putchar(DIRECT_CHAR)) : (0);
       my_putnbr(instruction->params[0]);
+    }
     while (tmp_type & 0b11000000)
     {
       print_args(&tmp_type, instruction, i);
