@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 16:29:06 2014 chapui_s
-** Last update Sat Apr 12 15:53:55 2014 poulet_a
+** Last update Sat Apr 12 17:38:13 2014 chapui_s
 */
 
 #include "machine.h"
@@ -21,7 +21,7 @@ int		is_error_in_args(int argc, char **argv)
   {
     if (is_options(argv[i]))
     {
-      if ((is_numbers(argv[i + 1])) == -1)
+      if ((is_numbers(argv[i + 1])) == -1 && my_strcmp(argv[i], "-d") != 0)
 	return (-1);
       i += 2;
     }
@@ -87,10 +87,13 @@ void		get_dump(int argc, char **argv, t_corewar *core)
 
   i = 0;
   core->nbr_cycle_dump = 0;
+  core->is_desassembler = 0;
   while (i < argc)
   {
     if (my_strcmp(argv[i], "-dump") == 0)
       core->nbr_cycle_dump = my_unsigned_atoi(argv[i + 1]);
+    if (my_strcmp(argv[i], "-d") == 0)
+      core->is_desassembler = 1;
     i += 1;
   }
 }

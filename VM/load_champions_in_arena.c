@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 16:06:34 2014 chapui_s
-** Last update Sat Apr 12 15:54:08 2014 poulet_a
+** Last update Sat Apr 12 17:52:30 2014 chapui_s
 */
 
 #include <sys/types.h>
@@ -69,7 +69,6 @@ static int		init_values_champions(t_champions *champions)
     champions->pc = champions->load_address;
     champions->carry = 0;
     champions->last_live = 0;
-    champions->size = 0;
     champions->cycle_to_wait = 0;
     champions = champions->next;
   }
@@ -106,5 +105,7 @@ int			load_champions_in_arena(unsigned char *arena,
     get_cycle_to_wait(core, tmp);
     tmp = tmp->next;
   }
+  if (core->nb_champions > 4)
+    return (my_putstr("error: too many programmes (max = 4)\n", 2));
   return (0);
 }

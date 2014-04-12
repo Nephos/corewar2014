@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 15:35:36 2014 chapui_s
-** Last update Sat Apr 12 15:54:05 2014 poulet_a
+** Last update Sat Apr 12 17:08:52 2014 chapui_s
 */
 
 #include <stdlib.h>
@@ -23,6 +23,5 @@ int		load_arena(t_corewar *core)
   init_arena(core->info_arena, MEM_SIZE, 0);
   if ((load_champions_in_arena(core->arena, core->info_arena, core)) == -1)
     return (-1);
-  my_gui(core);
   return (0);
 }

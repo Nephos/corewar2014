@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 15:06:25 2014 chapui_s
-** Last update Sat Apr 12 16:29:02 2014 chapui_s
+** Last update Sat Apr 12 17:22:54 2014 chapui_s
 */
 
 #ifndef MACHINE_H_
@@ -51,6 +51,7 @@ typedef struct		s_corewar
   int			prog_number_max;
   unsigned long long	nbr_cycle_dump;
   int			nbr_live_cur;
+  int			is_desassembler;
   int			cycle_to_die_cur;
 }			t_corewar;
 

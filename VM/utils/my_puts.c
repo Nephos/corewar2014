@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 17:04:58 2014 chapui_s
-** Last update Sat Apr 12 16:15:01 2014 chapui_s
+** Last update Sat Apr 12 18:15:13 2014 chapui_s
 */
 
 #include <unistd.h>
@@ -24,12 +24,15 @@ int		my_putstr(char *s, int fd)
 
 void		my_putnbr(int nb)
 {
-  if (nb < 0)
+  long		big;
+
+  big = nb;
+  if (big < 0)
   {
     my_putchar('-');
-    nb = -nb;
+    big = -big;
   }
-  if (nb >= 10)
-    my_putnbr(nb / 10);
-  my_putchar((nb % 10) + '0');
+  if (big >= 10)
+    my_putnbr(big / 10);
+  my_putchar((big % 10) + '0');
 }

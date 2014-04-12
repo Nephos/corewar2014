@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 18:19:21 2014 chapui_s
-** Last update Thu Mar 20 20:03:59 2014 chapui_s
+** Last update Sat Apr 12 17:34:21 2014 chapui_s
 */
 
 #include "../machine.h"
@@ -27,7 +27,8 @@ int		is_options(char *s)
 {
   if (!(my_strcmp(s, "-dump"))
       || !(my_strcmp(s, "-n"))
-      || !(my_strcmp(s, "-a")))
+      || !(my_strcmp(s, "-a"))
+      || !(my_strcmp(s, "-d")))
   {
     return (1);
   }
