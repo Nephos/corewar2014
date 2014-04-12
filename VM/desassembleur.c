@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 14:45:46 2014 chapui_s
-** Last update Sat Apr 12 18:35:56 2014 chapui_s
+** Last update Sat Apr 12 18:42:34 2014 chapui_s
 */
 
 #include "machine.h"
@@ -56,15 +56,15 @@ int		my_desassembler(t_corewar *core,
   pc_base = champions->pc;
   if (champions->name)
   {
-    my_putstr(".name\t\t", 1);
+    my_putstr(".name\t\t\"", 1);
     my_putstr(champions->name, 1);
-    my_putstr("\n", 1);
+    my_putstr("\"\n", 1);
   }
   if (champions->comment)
   {
-    my_putstr(".comment\t", 1);
+    my_putstr(".comment\t\"", 1);
     my_putstr(champions->comment, 1);
-    my_putstr("\n", 1);
+    my_putstr("\"\n", 1);
   }
   while (champions->pc < (pc_base + champions->size))
   {
