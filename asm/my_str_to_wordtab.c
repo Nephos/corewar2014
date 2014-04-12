@@ -5,11 +5,10 @@
 ** Login   <chapui_s@epitech.net>
 **
 ** Started on  Wed Oct  9 11:32:12 2013 chapui_s
-** Last update Thu Apr 10 21:30:59 2014 chapui_s
+** Last update Sat Apr 12 15:47:49 2014 poulet_a
 */
 
 #include <stdlib.h>
-#include "op.h"
 #include "asm.h"
 
 static int	is_it_alpha(char c)

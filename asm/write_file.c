@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 18:08:18 2014 chapui_s
-** Last update Sat Apr 12 02:01:13 2014 chapui_s
+** Last update Sat Apr 12 15:49:16 2014 poulet_a
 */
 
 #include <sys/types.h>
@@ -14,7 +14,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "asm.h"
-#include "op.h"
 
 static void	print_dorcor(char *new_filename, int i, int is_dot)
 {

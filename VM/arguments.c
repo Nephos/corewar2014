@@ -5,10 +5,9 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Mar 20 16:29:06 2014 chapui_s
-** Last update Thu Apr 10 02:13:51 2014 chapui_s
+** Last update Sat Apr 12 15:53:55 2014 poulet_a
 */
 
-#include "../op/op.h"
 #include "machine.h"
 
 int		is_error_in_args(int argc, char **argv)

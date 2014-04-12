@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 16:31:07 2014 chapui_s
-** Last update Sat Apr 12 15:15:36 2014 poulet_a
+** Last update Sat Apr 12 16:23:54 2014 chapui_s
 */
 
 #include <unistd.h>
@@ -31,7 +31,7 @@ int		load_players_name(t_corewar *core, t_gui *gui)
 	if ((gui->players[i++] = TTF_RenderText_Solid(gui->font_info,
 						      tmp->name,
 						      gui->my_color)) == NULL)
-	return (my_putstr("error: TTF_RenderText\n", 2));
+	  return (my_putstr("error: TTF_RenderText\n", 2));
       cur += 1;
       tmp = core->champions;
     }

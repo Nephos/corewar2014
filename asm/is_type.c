@@ -5,12 +5,11 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Thu Apr 10 21:35:33 2014 chapui_s
-** Last update Sat Apr 12 02:18:29 2014 chapui_s
+** Last update Sat Apr 12 15:50:40 2014 poulet_a
 */
 
 #include <stdlib.h>
 #include "asm.h"
-#include "op.h"
 
 int		is_label(char *str)
 {

@@ -5,12 +5,11 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 15:35:36 2014 chapui_s
-** Last update Thu Apr 10 16:44:17 2014 chapui_s
+** Last update Sat Apr 12 15:54:05 2014 poulet_a
 */
 
 #include <stdlib.h>
 #include "machine.h"
-#include "../op/op.h"
 
 int		load_arena(t_corewar *core)
 {
