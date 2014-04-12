@@ -5,30 +5,37 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Mon Mar 24 18:49:25 2014 chapui_s
-** Last update Mon Mar 24 19:56:10 2014 chapui_s
+** Last update Thu Apr 10 01:42:54 2014 chapui_s
 */
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_ttf.h>
 #include "../machine.h"
 
-static int	is_pc(t_champions *champions, int i)
+void		get_list_pc(t_corewar *core, t_gui *gui)
 {
-  while (champions)
+  t_champions	*tmp;
+  int		i;
+
+  tmp = core->champions;
+  i = 0;
+  while (tmp && i < (MAX_PC * 2) - 1)
   {
-    if (champions->pc == (unsigned int)i)
-      return (1);
-    champions = champions->next;
+    gui->list_pc[i] = tmp->pc;
+    gui->list_pc[i + 1] = tmp->color_gui;
+    i += 2;
+    tmp = tmp->next;
   }
-  return (0);
 }
 
-static void	get_color_champions(t_gui *gui,
+void		get_color_champions(t_gui *gui,
 				    unsigned char c)
 {
   gui->my_color.r = 30;
   gui->my_color.g = 30;
   gui->my_color.b = 30;
+  if (c == 0 || c > 4)
+    return ;
   (c == 1) ? (gui->my_color.r = 0) : (0);
   (c == 1) ? (gui->my_color.g = 255) : (0);
   (c == 1) ? (gui->my_color.b = 0) : (0);
@@ -43,29 +50,52 @@ static void	get_color_champions(t_gui *gui,
   (c == 4) ? (gui->my_color.b = 66) : (0);
 }
 
+static int	is_pc(t_corewar *core,
+		      t_gui *gui,
+		      int i)
+{
+  unsigned int	cur;
+  unsigned int	j;
+  int		*list;
+
+  cur = 0;
+  j = 0;
+  list = gui->list_pc;
+  while (j < core->nb_champions && cur < (MAX_PC * 2) - 1)
+  {
+    if (list[cur] == i)
+    {
+      get_color_champions(gui, list[cur + 1]);
+      return (1);
+    }
+    j += 1;
+    cur += 2;
+  }
+  return (0);
+}
+
 static int	set_color_with_pc(t_gui *gui,
 				  t_corewar *core,
 				  int i)
 {
   SDL_Color	fg_color;
-  char		*str;
+  char		str[3];
 
   fg_color.r = 0;
   fg_color.g = 0;
   fg_color.b = 0;
   fg_color.unused = 0;
-  if ((str = (char*)malloc(3)) == NULL)
-    return (my_putstr("error: malloc\n", 2));
-  if (is_pc(core->champions, i) == 1)
+  if (is_pc(core, gui, i) != 0)
     gui->byte_arena = TTF_RenderText_Shaded(gui->font,
-					    hex_to_str(core->arena[i], str),
+					    hex_to_str(core->arena[i],
+						       &str[0]),
 					    fg_color,
 					    gui->my_color);
   else
     gui->byte_arena = TTF_RenderText_Solid(gui->font,
-					   hex_to_str(core->arena[i], str),
-					   gui->my_color);
-  free(str);
+  					   hex_to_str(core->arena[i],
+						      &str[0]),
+  					   gui->my_color);
   if (gui->byte_arena == NULL)
     return (my_putstr("error: TTF_RenderText\n", 2));
   return (0);
@@ -78,7 +108,5 @@ int		get_color(t_gui *gui,
   get_color_champions(gui, core->info_arena[i]);
   if ((set_color_with_pc(gui, core, i)) == -1)
     return (-1);
-  gui->byte_arena->w = 12;
-  gui->byte_arena->h = 11;
   return (0);
 }

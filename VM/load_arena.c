@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 21 15:35:36 2014 chapui_s
-** Last update Mon Mar 24 18:55:02 2014 chapui_s
+** Last update Thu Apr 10 16:44:17 2014 chapui_s
 */
 
 #include <stdlib.h>
@@ -14,14 +14,16 @@
 
 int		load_arena(t_corewar *core)
 {
+  core->nbr_live_cur = 0;
+  core->cycle_to_die_cur = CYCLE_TO_DIE;
   if ((core->arena = (unsigned char*)malloc(MEM_SIZE)) == NULL)
     return (my_putstr(ALLOC_FAILED, 2));
   if ((core->info_arena = (unsigned char*)malloc(MEM_SIZE)) == NULL)
     return (my_putstr(ALLOC_FAILED, 2));
   init_arena(core->arena, MEM_SIZE, 0);
+  init_arena(core->info_arena, MEM_SIZE, 0);
   if ((load_champions_in_arena(core->arena, core->info_arena, core)) == -1)
     return (-1);
-  my_gui(core, MEM_SIZE);
-  my_showmem(core->arena, MEM_SIZE);
+  my_gui(core);
   return (0);
 }
