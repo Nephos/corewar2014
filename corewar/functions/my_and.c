@@ -5,7 +5,7 @@
 ** Login   <chapui_s@epitech.eu>
 **
 ** Started on  Fri Mar 28 21:20:28 2014 chapui_s
-** Last update Sun Apr 13 21:11:39 2014 chapui_s
+** Last update Mon Apr 28 01:09:15 2014 chapui_s
 */
 
 #include "../machine.h"
@@ -23,6 +23,7 @@ static int	get_size_param(int type)
       size += 4;
     else
       size += 2;
+    type = type << 2;
   }
   return (size + 1);
 }
