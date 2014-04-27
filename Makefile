@@ -16,23 +16,22 @@ CFLAGS	+=	-W -Wall -pedantic
 
 LFLAGS	+=	-Iop
 
-NAME	=	
-
-SRCS	=	
-
-OBJS	=	$(SRCS:.c=.o)
+NAME	=	corewar
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS)
-		$(CC) $(OBJS) -o $(NAME)
+$(NAME):
+		make -Casm
+		make -Ccorewar
 
 clean:
-		$(RM) $(OBJS)
+		make clean -Casm
+		make clean -Ccorewar
 
-fclean:		clean
-		$(RM) $(NAME)
+fclean:
+		make fclean -Casm
+		make fclean -Ccorewar
 
 re:		fclean all
 
-.PHONY:		clean fclean all re
+.PHONY:		clean fclean all re $(NAME)

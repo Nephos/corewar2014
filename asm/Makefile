@@ -43,9 +43,9 @@ OBJ	= $(SRC:.c=.o)
 
 CC	= gcc
 
-RM	= rm -rf
+RM	= rm -f
 
-CFLAGS	= -Wall -Wextra -ggdb
+CFLAGS	= -Wall -Wextra
 
 all:	$(NAME)
 
@@ -59,3 +59,5 @@ fclean:	clean
 	$(RM) $(NAME)
 
 re:	fclean all
+
+.PHONY:	all clean fclean re

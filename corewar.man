@@ -45,8 +45,8 @@ Modify the number of the next program
 \fB./asm roller.s\fR
 The champion roller.s will be compiled in a file named roller.cor
 .TP
-\fB./corewar roller.cor spartan.cor
-It will launch the virtual machine with the champion roller.cor fighting the champion spartan.cor
+\fB./corewar roller.cor try_again.cor
+It will launch the virtual machine with the champion roller.cor fighting the champion try_again.cor
 .SH SEE ALSO
 No related manpage.
 .SH REPORTING BUGS
